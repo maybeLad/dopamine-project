@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/* ===== FOOTER ===== */
+
+.footer-container {
+    background-color: #565E74;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2.5rem 3rem;
+}
+
+.footer-brand img {
+    height: 220px;
+    width: auto;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    text-align: right;
+}
+
+.footer-links h4 {
+    color: #EEF0FF;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem 0;
+}
+
+.footer-links a {
+    color: #EEF0FF;
+    text-decoration: none;
+    font-size: 1.5rem;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+#motto_brand {
+    background-color: #565E74;
+    color: #EEF0FF;
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+    padding: 0 3rem 1.5rem 3rem;
+}
+
+.footer-bottom {
+    background-color: #565E74;
+    border-top: 1px solid #555555;
+    padding: 1rem 3rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #555555;
+    font-size: 18px;
+    margin: 0;
+}
+
+.dopamine-scope {
+	padding: 0px 2rem 0px 2rem;
+}
+
+.dopamine-scope p{
+	color: #BEC6E0;
+	font-family: 'Montserrat', sans-serif;	
+	font-size: 30px;
+	padding: 2rem 4rem 2rem 4rem;
+}

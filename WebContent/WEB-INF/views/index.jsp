@@ -23,6 +23,10 @@
 </head>
 <body>
 
+	<header>
+		<jsp:include page="header.jsp"></jsp:include>
+	</header>
+	
 	<section class="section">
 		<div class="slider">
 			<div class="slide" id="slide">
@@ -84,5 +88,8 @@
 		}, 5000);
 	</script>
 
+	<footer>
+		<jsp:include page="footer.jsp"></jsp:include>
+	</footer>
 </body>
 </html>
