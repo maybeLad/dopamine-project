@@ -94,3 +94,36 @@ body {
 .can #sugar_free{
 	width: 421px;
 }
+
+#catalogue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#catalogue p {
+    color: #A3ABC4;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+#catalogue button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    color: white;
+    background-color: #8990A8;
+    border: none;
+    margin-top: 14px;
+    padding: 0.4em 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+#catalogue button:hover {
+    background-color: yellow;
+}
+
