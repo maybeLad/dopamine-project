@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+/* Reset generale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+/* Sfondo della pagina: un grigio-azzurro chiarissimo e pulito */
+body {
+    background-color: #EEF0FF; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Il contenitore principale che centra la scheda */
+#container {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* La scheda del modulo (Card bianca e morbida) */
+.signup {
+    background-color: #FFFFFF;
+    padding: 40px 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(190, 198, 224, 0.3); /* Ombra soffice basata su #BEC6E0 */
+}
+
+/* Titolo della scheda */
+.signup h1 {
+    font-size: 24px;
+    color: #3F465C; /* Un blu/grigio scuro ma morbido per i testi */
+    text-align: center;
+    margin-bottom: 28px;
+    font-weight: 600;
+}
+
+/* Spaziatura del modulo */
+.signup form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Spazio uniforme tra i campi */
+}
+
+/* Tutti i campi di testo della form */
+.signup input[type="text"],
+.signup input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #BEC6E0; /* Bordo chiaro e delicato */
+    border-radius: 8px;
+    font-size: 14px;
+    color: #3F465C;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Placeholder (i testi dentro i campi prima di scrivere) */
+.signup input::placeholder {
+    color: #8990A8; /* Tono intermedio e discreto */
+    opacity: 0.8;
+}
+
+/* Effetto quando l'utente clicca su un campo */
+.signup input[type="text"]:focus,
+.signup input[type="password"]:focus {
+    border-color: #8990A8;
+    background-color: #EEF0FF; /* Il campo si colora leggermente di azzurro soft */
+    box-shadow: 0 0 0 3px rgba(218, 226, 253, 0.4);
+}
+
+/* Bottone Registrati (il submit) */
+.signup input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #DAE2FD; /* Pastello soffice della palette */
+    color: #3F465C;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+}
+
+/* Effetto al passaggio del mouse sul bottone */
+.signup input[type="submit"]:hover {
+    background-color: #BEC6E0; /* Diventa leggermente più scuro */
+    color: #283044;
+}
+
+/* Link di Login in fondo */
+.signup h2 {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6F778E;
+}
+
+.signup h2 a {
+    color: #6F778E;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.signup h2 a:hover {
+    color: #3F465C;
+    border-bottom-color: #3F465C; /* Sottolineatura elegante al passaggio */
+}
+
+.signup p {
+    padding-top: 10px;
+    text-align: center;
+    font-family: cursive;
+}
+
+.signup {
+    background-color: #FFFFFF;
+    padding: 40px 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(190, 198, 224, 0.3);
+    
+    /* MODIFICHE PER IL LOGO A CAVALLO */
+    position: relative;   /* Serve per ancorare il logo */
+    margin-top: 50px;     /* Spinge la card in basso per lasciare spazio alla metà superiore del logo */
+}
+
+/* Stile per il contenitore del logo a cavallo del bordo */
+.logo-container {
+    position: absolute;
+    top: 0;                  /* Lo ancora al bordo superiore della card */
+    left: 50%;               /* Lo sposta al centro orizzontale */
+    transform: translate(-50%, -50%); /* Centratura perfetta e ascesa verso l'alto della metà esatta */
+    padding: 8px;            /* Opzionale: un piccolo spazio intorno al logo */
+    border-radius: 50%;      /* Opzionale: rende lo sfondo del logo rotondo se preferisci */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;             /* Mantiene il logo sopra tutto il resto */
+}
+
+/* Stile per l'immagine del logo */
+.logo-container img {
+    width: 120px;            /* Regola questa larghezza per decidere la grandezza del tuo logo */
+    height: 120px;           /* Se è quadrato o tondo, mantieni altezza e larghezza uguali */
+    object-fit: contain;
+    display: block;
+}
+
+.signup form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px; /* Aggiunge spazio extra tra il bordo superiore e il primo input */
+}
