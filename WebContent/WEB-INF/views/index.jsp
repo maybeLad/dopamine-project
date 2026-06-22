@@ -7,13 +7,14 @@
 	<title>Dopamine Shop</title>
 	
 	<!-- Logo anche nella scheda in alto del browser che cambia in base al tema che ha sul pc -->
-	<link rel="icon" type="image/jpeg" href="<%= request.getContextPath() %>/images/logo.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/jpeg" href="<%= request.getContextPath() %>/images/logo.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/jpeg" href="<%= request.getContextPath() %>/images/logo.png">
+    
 	<!-- FONTS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 
+	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/header.css">
 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/index.css">
 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/footer.css">
