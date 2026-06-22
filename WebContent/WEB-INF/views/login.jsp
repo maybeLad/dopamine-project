@@ -7,6 +7,11 @@
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/login.css">
 	
+	<!-- Icon -->
+    <link rel="icon" type="image/jpeg" href="<%= request.getContextPath() %>/images/logo.png">
+	
+	
+	
 <meta charset="UTF-8">
 <title>Dopamine Shop - Login</title>
 </head>
