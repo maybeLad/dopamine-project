@@ -74,7 +74,7 @@
 	
 	<div id="catalogue">
 		<p>Vuoi scoprire di più <br> sui nostri prodotti?</p>
-		<button onclick="window.location.href='<%= request.getContextPath() %>/products'">Vai al catalogo</button>	
+		<button onclick="window.location.href='<%= request.getContextPath() %>/catalogue'">Vai al catalogo</button>	
 	</div>
 	
 	
