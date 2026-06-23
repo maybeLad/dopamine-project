@@ -9,7 +9,7 @@
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/login.css">
 
-	<!-- Scripts -->
+	
 	
 	
 <meta charset="UTF-8">
@@ -47,7 +47,7 @@
 		</div>
 	</div>
 	
-	
+	<!-- Scripts -->
 	<script src="${pageContext.request.contextPath}/scripts/loginValidation.js"></script>
 </body>
 </html>
