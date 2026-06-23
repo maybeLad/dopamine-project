@@ -49,7 +49,7 @@ body {
 }
 
 /* Tutti i campi di testo della form */
-.login input[type="text"],
+.login input[type="email"],
 .login input[type="password"] {
     width: 100%;
     padding: 14px 16px;
@@ -69,7 +69,7 @@ body {
 }
 
 /* Effetto quando l'utente clicca su un campo */
-.login input[type="text"]:focus,
+.login input[type="email"]:focus,
 .login input[type="password"]:focus {
     border-color: #8990A8;
     background-color: #EEF0FF; /* Il campo si colora leggermente di azzurro soft */
@@ -163,4 +163,13 @@ body {
     flex-direction: column;
     gap: 16px;
     margin-top: 20px; /* Aggiunge spazio extra tra il bordo superiore e il primo input */
+}
+
+input.error {
+    border: 2px solid red;
+    outline: none;
+}
+
+input.error:focus {
+    border: 2px solid red;
 }
