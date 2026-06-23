@@ -17,7 +17,7 @@
 		<div class="signup">
 
             <div class="logo-container">
-                <img src="<%= request.getContextPath()%>/images/logo.png" alt="Dopamine Shop Logo">
+                <img src="${pageContext.request.contextPath}/images/logo.png" alt="Dopamine Shop Logo">
             </div>
 
 			<form action="" method="post">
@@ -38,7 +38,7 @@
 			</form>
 			
             <p>Hai già un account?</p>
-			<h2><a href="<%= request.getContextPath() %>/login">Accedi</a></h2>
+			<h2><a href="${pageContext.request.contextPath}/login">Accedi</a></h2>
 			
 		</div>
 	</div>
