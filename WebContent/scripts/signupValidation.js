@@ -19,8 +19,10 @@ document.getElementById("password").addEventListener("blur", function(){
 function validateForm(){
     let email = document.getElementById("email");
     let password = document.getElementById("password");
+	let telefono = document.getElementById("telefono");
 
-    if(!email.checkValidity() || !password.checkValidity()){
+
+    if(!email.checkValidity() || !password.checkValidity() || !telefono.checkValidity()){
         return false;
     }
     return true;
