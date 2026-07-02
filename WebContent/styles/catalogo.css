@@ -45,6 +45,12 @@ body{
     cursor: pointer;
 }
 
+.prodotto img{
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
 .griglia-prodotti img:hover{
     transform: scale(1.05);
 }

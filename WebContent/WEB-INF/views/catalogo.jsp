@@ -35,22 +35,30 @@
 
     <div class="griglia-prodotti">
 
-        <a href="#">
-            <img src="<%= request.getContextPath()%>/images/classic.png" alt="">
-        </a>
-
-        <a href="#">
-            <img src="<%= request.getContextPath()%>/images/peach.png" alt="">
-        </a>
-
-        <a href="#">
-            <img src="<%= request.getContextPath()%>/images/lemon.png" alt="">
-        </a>
-
-        <a href="#">
-            <img src="<%= request.getContextPath()%>/images/sugar_free.png" alt="">
-        </a>
-
+		<div class="prodotto">
+			<a href="#">
+            	<img src="<%= request.getContextPath()%>/images/classic.png" alt="">
+        	</a>
+		</div>
+        
+		<div class="prodotto">
+			<a href="#">
+            	<img src="<%= request.getContextPath()%>/images/peach.png" alt="">
+        	</a>
+		</div>
+        
+		<div class="prodotto">
+			<a href="#">
+            	<img src="<%= request.getContextPath()%>/images/lemon.png" alt="">
+        	</a>
+		</div>
+        
+		<div class="prodotto">
+			<a href="#">
+            	<img src="<%= request.getContextPath()%>/images/sugar_free.png" alt="">
+        	</a>
+		</div>
+  
     </div>
 
     <!-- CREATINA -->
@@ -73,18 +81,24 @@
 
     <div class="griglia-prodotti">
 
-        <a href="#">
-            <img src="<%= request.getContextPath()%>/images/proteine1.png" alt="">
-        </a>
-
-        <a href="#">
-            <img src="<%= request.getContextPath()%>/images/proteine2.png" alt="">
-        </a>
-
-        <a href="#">
-            <img src="<%= request.getContextPath()%>/images/proteine3.png" alt="">
-        </a>
-
+		<div class="prodotto">
+			<a href="#">
+            	<img src="<%= request.getContextPath()%>/images/proteine1.png" alt="">
+        	</a>
+		</div>
+        
+		<div class="prodotto">
+			<a href="#">
+            	<img src="<%= request.getContextPath()%>/images/proteine2.png" alt="">
+        	</a>
+		</div>
+        
+        <div class="prodotto">
+        	<a href="#">
+            	<img src="<%= request.getContextPath()%>/images/proteine3.png" alt="">
+        	</a>
+        </div>
+        
     </div>
 
     <!-- BORRACCE -->

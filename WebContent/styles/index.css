@@ -123,7 +123,17 @@ body {
     
 }
 
-#catalogue button:hover {
-    background-color: yellow;
+.can img {
+    width: 400px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
+#catalogue button:hover {
+    background-color: yellow;
+    transform: scale(1.05);
+}
+
+.can img:hover {
+    transform: scale(1.05);
+}
