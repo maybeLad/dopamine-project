@@ -1,15 +1,19 @@
 /**
- * Script per la validazione dei campi del login. Usano una funzione che si trova in 
+ * Script per la validazione dei campi del sign up. Usano una funzione che si trova in 
  * validationScript che controlla se i campi sono correttamente inseriti
  * appena l'utente toglie il focus dal campo.
  */
 
 document.getElementById("email").addEventListener("blur", function(){
-	check("email")
+	check("email");
+});
+
+document.getElementById("telefono").addEventListener("blur", function(){
+	check("telefono");
 });
 
 document.getElementById("password").addEventListener("blur", function(){
-    check("password")
+	check("password");
 });
 
 function validateForm(){
@@ -21,4 +25,3 @@ function validateForm(){
     }
     return true;
 }
-
