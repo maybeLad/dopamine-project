@@ -48,6 +48,15 @@
 	text-align: center;
 }
 
+
+.can img {
+    width: 21rem;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+
+
 .can #classic_text {
 	font-size: 4rem;
 	color: #3B2FC9;
@@ -110,14 +119,6 @@
     
 }
 
-.can img {
-    width: 21rem;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-
-
 #catalogue button:hover {
     background-color: yellow;
     transform: scale(1.05);
@@ -128,6 +129,20 @@
 }
 
 /* Tablet */
-@media (max-width: 1440px){
+@media (max-width: 1630px){
+	.can-section {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr); 
+		justify-items: center; 
+		gap: 1.5em; 
+		padding: 2em 1em;
+	}
 
+	.can h2 {
+		font-size: 2.5rem !important; 
+	}
+	
+	.can img {
+		width: 16rem; 
+	}
 }

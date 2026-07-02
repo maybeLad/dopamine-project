@@ -60,13 +60,13 @@
 		</div>
 	
 		<div class="can">
-			<a href="<%= request.getContextPath() %>/products/lemon"><img alt="Lemon"  id="lemon" src="<%= request.getContextPath() %>/images/lemon.png"></a>
+			<a href="<%= request.getContextPath() %>/products/lemon"><img alt="Lemon" src="<%= request.getContextPath() %>/images/lemon.png"></a>
 			<h2 id="lemon_text">LEMON</h2>
 
 		</div>
 		
 		<div class="can">
-			<a href="<%= request.getContextPath() %>/products/sugar_free"><img alt="Sugar free" id="sugar_free" src="<%= request.getContextPath() %>/images/sugar_free.png"></a>
+			<a href="<%= request.getContextPath() %>/products/sugar_free"><img alt="Sugar free" src="<%= request.getContextPath() %>/images/sugar_free.png"></a>
 			<h2 id="sugar_free_text">SUGAR FREE</h2>
 		</div>
 	
