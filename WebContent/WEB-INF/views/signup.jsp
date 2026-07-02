@@ -27,9 +27,9 @@
 				<!-- Campo per inserire il cognome (Obbligatorio) -->
 				<input type="text" name="cognome" placeholder="Cognome" required>
 				<!-- Campo per inserire l'email (Obbligatorio) -->
-				<input type="text" name="email" placeholder="Email" required>
+				<input type="email" name="email" placeholder="Email" required>
 				<!-- Campo per inserire il numero telefonico (Obbligatorio) -->
-				<input type="text" name="mobilenumber" placeholder="Telefono" required>
+				<input type="tel" name="mobilenumber" placeholder="Telefono" required>
 				<!-- Campo per inserire la password (Obbligatorio) -->
 				<input type="password" name="password" placeholder="Password" required>
 				<!--Bottone per inviare i dati -->

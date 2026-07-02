@@ -3,7 +3,7 @@
 
 <nav class="header-container">
 	<div id="logo">
-		<img alt="Dopamine log" src="<%= request.getContextPath()%>/images/logo.png">	
+		<a href="<%= request.getContextPath()%>/welcome"><img alt="Dopamine log" src="<%= request.getContextPath()%>/images/logo.png"></a>
 	</div>
 	
 	<ul class="center-side">
