@@ -2,13 +2,11 @@
 
 /* Banner*/
 .section {
-	width: 120rem;
 	margin-top: 0;
 	padding: 0;
 }
 
 .slider {
-	width: 100%;
 	height: 1000px;
 	overflow: hidden;
 }
@@ -42,10 +40,11 @@
 
 /* Catalogue */
 .can-section {
+	align-items: center;
 	display: flex;
 	justify-content: center;
 	gap: 2em;
-	padding: 3em 0;
+	padding: 3em 2em;
 	text-align: center;
 }
 
@@ -117,14 +116,6 @@
     transition: transform 0.3s ease;
 }
 
-.can #lemon {
-	width:21.8em;
-}
-
-.can #sugar_free {
-	width: 22.23em;
-}
-
 
 
 #catalogue button:hover {
@@ -138,11 +129,5 @@
 
 /* Tablet */
 @media (max-width: 1440px){
-	body{
-	background-color: red;}
-	
-	.section {
-		width: 86rem;
-	}
-	
+
 }
