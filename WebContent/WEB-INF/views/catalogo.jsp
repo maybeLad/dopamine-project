@@ -73,6 +73,10 @@
         <a href="#">
             <img src="<%= request.getContextPath()%>/images/fruttidibosco1.png" alt="">
         </a>
+        
+        <a href="#">
+            <img src="<%= request.getContextPath()%>/images/lamponeblu1.png" alt="">
+        </a>
 
     </div>
 
@@ -99,6 +103,12 @@
         	</a>
         </div>
         
+		<div class="prodotto">
+        	<a href="#">
+            	<img src="<%= request.getContextPath()%>/images/proteine4.png" alt="">
+        	</a>
+        </div>
+        
     </div>
 
     <!-- BORRACCE -->
@@ -107,30 +117,32 @@
     <div class="griglia-prodotti">
 
         <a href="#">
-            <img src="<%= request.getContextPath()%>/images/?" alt="">
+            <img src="<%= request.getContextPath()%>/images/borraccianera.png" alt="">
         </a>
 
         <a href="#">
-            <img src="<%= request.getContextPath()%>/images/?" alt="">
+            <img src="<%= request.getContextPath()%>/images/borracciabianca.png" alt="">
         </a>
 
     </div>
 
     <!-- MERCH -->
-    <h3>Merch</h3>
+    <h3>Abbigliamento</h3>
 
     <div class="griglia-prodotti">
+		
+		<div class="prodotto">
+        <a href="#">
+            <img src="<%= request.getContextPath()%>/images/cappello.png" alt="">
+        </a>
+        </div>
 
         <a href="#">
-            <img src="<%= request.getContextPath()%>/images/?" alt="">
+            <img src="<%= request.getContextPath()%>/images/magliettanera1.png" alt="">
         </a>
 
         <a href="#">
-            <img src="<%= request.getContextPath()%>/images/?" alt="">
-        </a>
-
-        <a href="#">
-            <img src="<%= request.getContextPath()%>/images/?" alt="">
+            <img src="<%= request.getContextPath()%>/images/magliettabianca1.png" alt="">
         </a>
 
     </div>
