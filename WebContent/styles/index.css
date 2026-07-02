@@ -1,11 +1,8 @@
 @charset "UTF-8";
 
-body {
-	padding: 0;
-	margin: 0;
-}
-
+/* Banner*/
 .section {
+	width: 120rem;
 	margin-top: 0;
 	padding: 0;
 }
@@ -43,21 +40,13 @@ body {
 	object-fit: cover;
 }
 
+/* Catalogue */
 .can-section {
 	display: flex;
 	justify-content: center;
 	gap: 2em;
 	padding: 3em 0;
 	text-align: center;
-}
-
-.can img {
-	width: 400px;
-	object-fit: contain;
-}
-
-.can #lemon{
-	width:415px;
 }
 
 .can #classic_text {
@@ -91,9 +80,8 @@ body {
 	font-weight: 400;
 	font-style: normal;
 }
-.can #sugar_free{
-	width: 421px;
-}
+
+
 
 #catalogue {
     display: flex;
@@ -124,10 +112,20 @@ body {
 }
 
 .can img {
-    width: 400px;
+    width: 21rem;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
+
+.can #lemon {
+	width:21.8em;
+}
+
+.can #sugar_free {
+	width: 22.23em;
+}
+
+
 
 #catalogue button:hover {
     background-color: yellow;
@@ -136,4 +134,15 @@ body {
 
 .can img:hover {
     transform: scale(1.05);
+}
+
+/* Tablet */
+@media (max-width: 1440px){
+	body{
+	background-color: red;}
+	
+	.section {
+		width: 86rem;
+	}
+	
 }
