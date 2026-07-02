@@ -8,11 +8,13 @@
 
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/header.css">
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/info.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 	<header>
 		<jsp:include page="header.jsp"></jsp:include>
 	</header>
+	<br>
 	<div>
 		<table>
 			<tr>
@@ -27,14 +29,14 @@
 				<td>0512122431</td>
 				<td>Luca</td>
 				<td>De Filippo</td>
-				<td>@lad_gtfz</td>
+				<td><a href="https://www.instagram.com/lad_gtfz?igsh=eGxiaGkzNjQzeXpu"><i class="fa-brands fa-instagram"></i></a></td>
 			</tr>
 			<tr>
 				<td>f.pesce11@studenti.unisa.it</td>
 				<td>0512122050</td>
 				<td>Francesco</td>
 				<td>Pesce</td>
-				<td>@alt_fr4_</td>
+				<td><a href="https://www.instagram.com/alt_fr4_?igsh=MXNucGpkY3I0OW05bA=="><i class="fa-brands fa-instagram"></i></a></td>
 			</tr>
 		</table>
 	</div>
