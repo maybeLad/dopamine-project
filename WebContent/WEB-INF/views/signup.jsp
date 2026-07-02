@@ -20,18 +20,29 @@
                 <img src="${pageContext.request.contextPath}/images/logo.png" alt="Dopamine Shop Logo">
             </div>
 
-			<form action="" method="post">
+			<form action="" method="post" onsubmit="return validateForm()">
 			
 				<!-- Campo per inserire il nome (Obbligatorio) -->
-				<input type="text" name="nome" placeholder="Nome" required>
+				<span id="error_nome" style="color:red"></span>
+				<input type="text" id="nome" name="nome" placeholder="Nome" required>
+				
+				
 				<!-- Campo per inserire il cognome (Obbligatorio) -->
-				<input type="text" name="cognome" placeholder="Cognome" required>
+				<span id="error_cognome" style="color:red"></span>
+				<input type="text" id="cognome" name="cognome" placeholder="Cognome" required>
+				
 				<!-- Campo per inserire l'email (Obbligatorio) -->
-				<input type="email" name="email" placeholder="Email" required>
+				<span id="error_email" style="color:red"></span>
+				<input type="email" id="email" name="email" placeholder="Email" required>
+				
 				<!-- Campo per inserire il numero telefonico (Obbligatorio) -->
-				<input type="tel" name="mobilenumber" placeholder="Telefono" required>
+				<span id="error_telefono" style="color:red"></span>
+				<input type="tel" id="telefono" name="mobilenumber" placeholder="Telefono" pattern="3[0-9]{9}" required>
+				
 				<!-- Campo per inserire la password (Obbligatorio) -->
-				<input type="password" name="password" placeholder="Password" required>
+				<span id="error_password" style="color:red"></span>
+				<input type="password" id="password" name="password" placeholder="Password" minlength="8" maxlength="20" required>
+				
 				<!--Bottone per inviare i dati -->
 				<input type="submit" value="Registrati">
 				
@@ -42,5 +53,10 @@
 			
 		</div>
 	</div>
+	
+	<!-- Scripts -->
+	<script src="${pageContext.request.contextPath}/scripts/validationScript.js"></script>
+	<script src="${pageContext.request.contextPath}/scripts/signupValidation.js"></script>
+	
 </body>
 </html>

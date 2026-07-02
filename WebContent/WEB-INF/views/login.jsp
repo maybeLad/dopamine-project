@@ -25,14 +25,14 @@
                 <img src="${pageContext.request.contextPath}/images/logo.png" alt="Dopamine Shop Logo">
             </div>
 		
-			<form name="loginForm"action="" method="post" onsubmit="return validateForm()">
+			<form action="" method="post" onsubmit="return validateForm()">
 				
 				<!-- Campo per inserire l'email con annesso span per eventuali errori-->
-				<span id="errorEmail" style="color:red"></span>
+				<span id="error_email" style="color:red"></span>
 				<input type="email" id="email" name="email" placeholder="Email" required>
 
 				<!-- Campo per inserire l'email con annesso span per eventuali errori-->
-				<span id="errorPassword" style="color:red"></span>
+				<span id="error_password" style="color:red"></span>
 				<input type="password" id="password"name="password" placeholder="Password" minlength="8" maxlength="20" required>
 				
 				
@@ -48,6 +48,7 @@
 	</div>
 	
 	<!-- Scripts -->
+	<script src="${pageContext.request.contextPath}/scripts/validationScript.js"></script>
 	<script src="${pageContext.request.contextPath}/scripts/loginValidation.js"></script>
 </body>
 </html>
