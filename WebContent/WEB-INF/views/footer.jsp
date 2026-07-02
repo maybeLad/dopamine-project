@@ -18,7 +18,7 @@
 
     <div class="footer-links">
         <h4>Informazioni</h4>
-        <a href="#">Chi siamo</a>
+        <a href="<%= request.getContextPath()%>/info">Chi siamo</a>
         <a href="#">Termini e condizioni</a>
         <a href="#">Privacy Policy</a>
         <a href="#">Cookie Policy</a>
