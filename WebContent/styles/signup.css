@@ -49,7 +49,9 @@ body {
 }
 
 /* Tutti i campi di testo della form */
+.signup input[type="email"],
 .signup input[type="text"],
+.signup input[type="tel"],
 .signup input[type="password"] {
     width: 100%;
     padding: 14px 16px;
@@ -69,8 +71,10 @@ body {
 }
 
 /* Effetto quando l'utente clicca su un campo */
-.signup input[type="text"]:focus,
-.signup input[type="password"]:focus {
+.signup input[type="email"],
+.signup input[type="text"],
+.signup input[type="tel"],
+.signup input[type="password"]{
     border-color: #8990A8;
     background-color: #EEF0FF; /* Il campo si colora leggermente di azzurro soft */
     box-shadow: 0 0 0 3px rgba(218, 226, 253, 0.4);
