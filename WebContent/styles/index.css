@@ -105,13 +105,13 @@ body {
 #catalogue p {
     color: #A3ABC4;
     font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
 }
 
 #catalogue button {
     font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     color: white;
     background-color: #8990A8;
     border: none;
