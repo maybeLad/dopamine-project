@@ -10,7 +10,7 @@
 		<li><a href="<%= request.getContextPath()%>/catalogue">Catalogo</a></li>
 		<li><a href="<%= request.getContextPath()%>/news">Novità</a></li>
 		<li><a href="<%= request.getContextPath()%>/reviews">Recensioni</a></li>
-		<li><a href="<%= request.getContextPath()%>/contacts">Contatti</a></li>
+		<li><a href="<%= request.getContextPath()%>/info">Contatti</a></li>
 	</ul>
 	
 	<ul class="right-side">
