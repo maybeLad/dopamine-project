@@ -19,6 +19,7 @@ li { list-style: none; }
 	text-decoration: none;
     color: #6F778E;
     font-size: 1.5rem;
+    margin-right: 20px;
 }
 
 a:hover { color: yellow; }
@@ -44,4 +45,20 @@ a:hover { color: yellow; }
     display: flex;
     align-items: center;
     gap: 2em;
+}
+
+@media (max-width:768px){
+	.center-side :nth-child(3) {
+		display:none;
+	}
+	
+	
+}
+
+@media (max-width: 580px){
+	.center-side :nth-child(3), .center-side:nth-child(2),.center-side :nth-child(4) {
+		display:none;
+	}
+	
+	
 }
