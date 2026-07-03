@@ -8,8 +8,12 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/login.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/header.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/footer.css">
 
-	
+	<!--  FONTS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 	
 	
 <meta charset="UTF-8">
@@ -44,6 +48,7 @@
             <p>Non hai un account?</p>
 			<h2><a href="${pageContext.request.contextPath}/signup">Registrati</a></h2>
 			
+			<h2><a href="${pageContext.request.contextPath}"><i class="fa-solid fa-arrow-left-long"></i> HOME PAGE</a></h2>
 		</div>
 	</div>
 	
