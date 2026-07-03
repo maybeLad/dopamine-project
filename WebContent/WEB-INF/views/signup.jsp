@@ -7,6 +7,9 @@
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/signup.css">
 	
+	<!--  FONTS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <meta charset="UTF-8">
 <title>Dopamine Shop - Sign Up</title>
 </head>
@@ -50,6 +53,8 @@
 			
             <p>Hai già un account?</p>
 			<h2><a href="${pageContext.request.contextPath}/login">Accedi</a></h2>
+		
+			<h2><a href="${pageContext.request.contextPath}"><i class="fa-solid fa-arrow-left-long"></i> HOME PAGE</a></h2>
 			
 		</div>
 	</div>
