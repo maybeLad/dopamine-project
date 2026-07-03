@@ -128,7 +128,6 @@
     transform: scale(1.05);
 }
 
-/* Tablet */
 @media (max-width: 1630px){
 	.can-section {
 		display: grid;
@@ -144,5 +143,45 @@
 	
 	.can img {
 		width: 16rem; 
+	}
+}
+
+
+@media (max-width: 768px){
+	.section{
+		display:none;
+	}
+	
+	.can-section {
+		display: grid;
+		grid-template-columns: 1fr; 
+		justify-items: center; 
+		gap: 1.5em; 
+	}
+
+	.can h2 {
+		font-size: 2.5rem !important; 
+	}
+	
+	.can img {
+		width: 16rem; 
+	}
+	
+	#catalogue p{
+		font-size: 2rem;
+	}
+	
+	#catalogue button {
+		font-size: 2.1rem;
+	}
+}
+
+@media (max-width: 380px){
+	#catalogue p{
+		font-size: 1.8rem;
+	}
+	
+	#catalogue button {
+		font-size: 1.9rem;
 	}
 }
