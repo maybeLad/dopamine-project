@@ -32,8 +32,24 @@ body{
     gap: 25px;
 }
 
+.form-lattine{
+    display: contents;
+}
+
 .griglia-prodotti a{
     display: block;
+    text-decoration: none;
+}
+
+.griglia-prodotti button{
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
     text-decoration: none;
 }
 
