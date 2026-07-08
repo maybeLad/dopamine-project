@@ -17,8 +17,8 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/header.css">
-	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/index.css">
 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/footer.css">
+	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/index.css">
 	
 	
 
