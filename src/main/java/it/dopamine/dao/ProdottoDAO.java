@@ -27,7 +27,7 @@ public class ProdottoDAO {
                 	if(rs.next()) {
                 		product = new Prodotto();
                 		product.setNome(name);
-                		product.setId(rs.getInt("id"));
+                		product.setId(rs.getInt("id_prodotto"));
                 		product.setDescrizione(rs.getString("descrizione"));
                 		product.setPrezzo(rs.getDouble("prezzo"));
                 		

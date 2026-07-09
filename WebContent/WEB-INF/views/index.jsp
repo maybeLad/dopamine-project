@@ -6,8 +6,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dopamine Shop</title>
-	
-	<!-- Logo anche nella scheda in alto del browser che cambia in base al tema che ha sul pc -->
+
+	<!-- Logo anche nella scheda in alto del browser -->
     <link rel="icon" type="image/jpeg" href="<%= request.getContextPath() %>/images/logo.png">
     
 	<!-- FONTS -->
