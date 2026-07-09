@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.product-container {
+	display: inline-flex;
+	margin: 2rem;
+	padding: 0 auto;
+	width: stretch;
+	justify-content: center;
+}
+
+#product-picture {
+	width: 17rem;
+}
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 28rem;
+    padding: 1.5rem 2rem;
+}
+
+.product-info h1 {
+    color: #6F778E;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.product-info h1::first-letter {
+    text-transform: uppercase;
+}
+
+.product-info h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #9199AA;
+    margin: 0;
+}
+
+.product-info p {
+    margin: 0.2rem 0 0 0;
+    line-height: 1.5;
+    color: #2E2E2E;
+}
+
+/* prezzo evidenziato, non un semplice paragrafo come la descrizione */
+.product-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1F2937;
+}
+
+/* riga dei bottoni, quando li aggiungerai */
+.product-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid #6F778E;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-add-cart {
+    background-color: transparent;
+    color: #6F778E;
+}
+
+.btn-add-cart:hover {
+    background-color: #6F778E;
+    color: #fff;
+}
+
+.btn-buy-now {
+    background-color: #6F778E;
+    color: #fff;
+    border-color: #6F778E;
+}
+
+.btn-buy-now:hover {
+    background-color: #565D70;
+    border-color: #565D70;
+}
