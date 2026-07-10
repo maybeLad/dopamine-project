@@ -12,7 +12,6 @@ import it.dopamine.dao.ProdottoDAO;
 /**
  * Servlet implementation class ProductPageServlet
  */
-@WebServlet("/ProductPageServlet")
 public class ProductPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

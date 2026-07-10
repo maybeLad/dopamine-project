@@ -5,28 +5,23 @@
 
 
 <%
-Prodotto prodotto = (Prodotto) request.getAttribute("productName");
+	Prodotto prodotto = (Prodotto) request.getAttribute("productName");
 %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 
-<!-- Logo anche nella scheda in alto del browser -->
-<link rel="icon" type="image/jpeg"
-	href="<%=request.getContextPath()%>/images/logo.png">
+	<!-- Logo anche nella scheda in alto del browser -->
+	<link rel="icon" type="image/jpeg" href="<%=request.getContextPath()%>/images/logo.png">
 
 <!-- FONTS -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- CSS -->
-<link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/styles/header.css">
-<link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/styles/footer.css">
-<link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/styles/productPage.css">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/styles/header.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/styles/footer.css">	
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/styles/productPage.css">
 
 <title>Dopamine Shop</title>
 </head>
@@ -34,10 +29,10 @@ Prodotto prodotto = (Prodotto) request.getAttribute("productName");
 	<header>
 		<jsp:include page="header.jsp"></jsp:include>
 	</header>
+		
 	<div class="product-container">
 		<div>
-			<img id="product-picture" alt="Foto lattina classic"
-				src="<%=request.getContextPath()%>/images/<%=prodotto.getNome()%>.png">
+			<img id="product-picture" alt="Foto prodotto" src="<%=request.getContextPath()%><%= prodotto.getUrl_img() %>">
 
 		</div>
 
