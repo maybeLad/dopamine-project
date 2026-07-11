@@ -9,8 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.mysql.cj.xdevapi.PreparableStatement;
+
 public class UtenteDAO {
-    public static int registraUtente(Utente utente) throws ClassNotFoundException {
+    public int registraUtente(Utente utente) throws ClassNotFoundException {
         String INSERT_USER_SQL = "INSERT INTO utente" +
                 " (admin, nome, cognome, indirizzo, telefono, email, password) VALUES " +
                 "(?, ?, ?, ?, ?, ?, ?)";
@@ -39,7 +41,7 @@ public class UtenteDAO {
         return ris;
     }
     
-    public static Utente getUtente(int id) {
+    public Utente getUtente(int id) {
     	Utente u = null;
     	
     	String SEARCH_USER = "SELECT * FROM utenti WHERE id_utente = ?";
@@ -69,4 +71,38 @@ public class UtenteDAO {
 
         return u;
     } 
+    
+    public Utente checkLogin(String email, String password) {
+    	String CHECK_USER = "SELECT * FROM utenti WHERE email = ? AND password = ?";
+    	Utente u = null;
+    	
+    	try(Connection connessione = Connector.getConnection();
+    			PreparedStatement ps = connessione.prepareStatement(CHECK_USER)){
+    		
+    		ps.setString(1, email);
+    		ps.setString(2, password);
+    		
+    		try(ResultSet rs = ps.executeQuery()){
+    			if(rs.next()) {
+    				u = new Utente();
+    				
+    				u.setId(rs.getInt("id_utente"));
+            		u.setNome(rs.getString("nome"));
+            		u.setCognome(rs.getString("cognome"));
+            		u.setEmail(email);
+            		u.setIndirizzo(rs.getString("indirizzo"));
+            		u.setTelefono(rs.getString("telefono"));
+    				
+    			}
+    		}
+    		
+    		
+    		
+    	}catch (SQLException e) {
+    		e.getMessage();
+    	}
+    	
+    	return u;
+    }
+    
 }

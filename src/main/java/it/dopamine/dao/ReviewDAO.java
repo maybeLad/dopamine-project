@@ -13,7 +13,7 @@ import it.dopamine.model.Recensione;
 import it.dopamine.util.Connector;
 
 public class ReviewDAO {
-	public static ArrayList<Recensione> getReviews(){
+	public ArrayList<Recensione> getReviews(){
 		ArrayList<Recensione> arr = new ArrayList<Recensione>();
 		
 		final String TAKE_ALL = "SELECT * FROM recensioni ORDER BY data_recensione DESC LIMIT 9";

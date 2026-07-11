@@ -16,7 +16,7 @@ import it.dopamine.model.Prodotto;
 import it.dopamine.util.Connector;
 
 public class ProdottoDAO {
-	public static Prodotto getProdotto(String name) {
+	public Prodotto getProdotto(String name) {
 		final String TAKE_PRODUCT = "SELECT * FROM prodotti WHERE nome = ?" ;
 		Prodotto product = null;
 		
@@ -43,7 +43,7 @@ public class ProdottoDAO {
 		return product;
 	}
 	
-	public static Prodotto getProdotto(int id) {
+	public Prodotto getProdotto(int id) {
 		final String TAKE_PRODUCT = "SELECT * FROM prodotti WHERE id_prodotto = ?" ;
 		Prodotto product = null;
 		
@@ -70,7 +70,7 @@ public class ProdottoDAO {
 		return product;
 	}
 	
-	public static Map<String, List<Prodotto>> getProdottiRaggruppati() {
+	public Map<String, List<Prodotto>> getProdottiRaggruppati() {
 		Map<String, List<Prodotto>> catalogo = new LinkedHashMap<>();
 
 		final String TAKE_ALL = "SELECT p.id_prodotto, p.id_categoria, p.nome, p.descrizione, "
