@@ -5,9 +5,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
-// Servlet per richiedere la pagina "login.jsp"
+import it.dopamine.dao.UtenteDAO;
+import it.dopamine.model.Utente;
+
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -16,4 +20,26 @@ public class LoginServlet extends HttpServlet {
         request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
     }
     
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	String email = request.getParameter("email");
+    	String password = request.getParameter("password");
+    	
+    	UtenteDAO utenteDAO = new UtenteDAO();
+    	Utente u = utenteDAO.checkLogin(email, password);
+    	
+    	if(u != null) {
+    		HttpSession session = request.getSession();
+            session.setAttribute("utenteLoggato", u);
+            response.sendRedirect(request.getContextPath());
+    	}else {
+    		request.setAttribute("errore", "Credenziali errate!");
+            request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+    	}
+    	
+    	
+    	
+    	}
+    
 }
+    

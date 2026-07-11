@@ -17,7 +17,7 @@ public class CatalogueServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		Map<String, List<Prodotto>> catalogo = ProdottoDAO.getProdottiRaggruppati();
+		Map<String, List<Prodotto>> catalogo = (new ProdottoDAO()).getProdottiRaggruppati();
 		request.setAttribute("catalogo", catalogo);
 
 		request.getRequestDispatcher("/WEB-INF/views/catalogo.jsp").forward(request, response);

@@ -35,7 +35,11 @@
 	
 	<div class="review-container">
 	
-		<%  ArrayList<Recensione> recensioni = ReviewDAO.getReviews(); 
+		<%  ReviewDAO reviewDAO = new ReviewDAO(); 
+			ProdottoDAO prodottoDAO = new ProdottoDAO();
+			UtenteDAO utenteDAO = new UtenteDAO();
+			ArrayList<Recensione> recensioni = reviewDAO.getReviews();
+		
 			if (recensioni.isEmpty()) { %>
 	    		<p>Non e' stato possibile trovare alcuna recensione.</p>
 	 	<%	} else {
@@ -56,8 +60,8 @@
     		<p class="review-text"><%= r.getDescrizione() %></p>
 
     		<p class="review-meta">
-        		<%= UtenteDAO.getUtente(r.getId_utente()).getNome() %> — 
-        		<%= ProdottoDAO.getProdotto(r.getId_prodotto()).getNome() %>
+        		<%= utenteDAO.getUtente(r.getId_utente()).getNome() %> —
+        		<%= prodottoDAO.getProdotto(r.getId_prodotto()).getNome() %>
     		</p>
 		</div>
 		<%
