@@ -13,39 +13,60 @@ import java.util.List;
 
 
 import it.dopamine.model.Prodotto;
+import it.dopamine.util.Connector;
 
 public class ProdottoDAO {
 	public static Prodotto getProdotto(String name) {
 		final String TAKE_PRODUCT = "SELECT * FROM prodotti WHERE nome = ?" ;
 		Prodotto product = null;
 		
-		
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+		try (Connection connessione = Connector.getConnection();
+			PreparedStatement ps = connessione.prepareStatement(TAKE_PRODUCT, Statement.RETURN_GENERATED_KEYS)) {
 			
-			try (Connection connessione = DriverManager.getConnection("jdbc:mysql://localhost:3306/dopamine?useSSL=false&serverTimezone=UTC", "root", "admin");
-				PreparedStatement ps = connessione.prepareStatement(TAKE_PRODUCT, Statement.RETURN_GENERATED_KEYS)) {
-				
-				ps.setString(1, name);
+			ps.setString(1, name);
 
-				try (ResultSet rs = ps.executeQuery()){
-                	if(rs.next()) {
-                		product = new Prodotto();
-                		product.setNome(name);
-                		product.setId(rs.getInt("id_prodotto"));
-                		product.setDescrizione(rs.getString("descrizione"));
-                		product.setPrezzo(rs.getDouble("prezzo"));
-                		product.setUrl_img(rs.getString("url_immagine"));
-                		
-                	}
-                }
-            } catch (SQLException e) {
-            	e.printStackTrace();
+			try (ResultSet rs = ps.executeQuery()){
+            	if(rs.next()) {
+            		product = new Prodotto();
+            		product.setNome(name);
+            		product.setId(rs.getInt("id_prodotto"));
+            		product.setDescrizione(rs.getString("descrizione"));
+            		product.setPrezzo(rs.getDouble("prezzo"));
+            		product.setUrl_img(rs.getString("url_immagine"));
+            		
+            	}
             }
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException e) {
         	e.printStackTrace();
         }
+        
+		return product;
+	}
+	
+	public static Prodotto getProdotto(int id) {
+		final String TAKE_PRODUCT = "SELECT * FROM prodotti WHERE id_prodotto = ?" ;
+		Prodotto product = null;
 		
+		try (Connection connessione = Connector.getConnection();
+			PreparedStatement ps = connessione.prepareStatement(TAKE_PRODUCT, Statement.RETURN_GENERATED_KEYS)) {
+			
+			ps.setInt(1, id);
+
+			try (ResultSet rs = ps.executeQuery()){
+            	if(rs.next()) {
+            		product = new Prodotto();
+            		product.setNome(rs.getString("nome"));
+            		product.setId(id);
+            		product.setDescrizione(rs.getString("descrizione"));
+            		product.setPrezzo(rs.getDouble("prezzo"));
+            		product.setUrl_img(rs.getString("url_immagine"));
+            		
+            	}
+            }
+        } catch (SQLException e) {
+        	e.printStackTrace();
+        }
+        
 		return product;
 	}
 	
@@ -58,12 +79,8 @@ public class ProdottoDAO {
 				+ "JOIN categorie c ON p.id_categoria = c.id_categoria "
 				+ "ORDER BY c.nome, p.id_prodotto";
 
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-
-			try (Connection connessione = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/dopamine?useSSL=false&serverTimezone=UTC", "root", "admin");
-				 PreparedStatement ps = connessione.prepareStatement(TAKE_ALL, Statement.RETURN_GENERATED_KEYS);
+		try (Connection connessione = Connector.getConnection(); 
+				PreparedStatement ps = connessione.prepareStatement(TAKE_ALL, Statement.RETURN_GENERATED_KEYS);
 				 ResultSet rs = ps.executeQuery()) {
 
 				while (rs.next()) {
@@ -83,12 +100,15 @@ public class ProdottoDAO {
 				}	
 
 			} catch (SQLException e) {
-				e.printStackTrace();
+				e.getMessage();
 			}
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
 
+			
+		
 		return catalogo;
 	}
+
+
+
 }
+
