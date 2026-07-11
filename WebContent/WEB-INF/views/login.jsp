@@ -27,7 +27,12 @@
                 <img src="${pageContext.request.contextPath}/images/logo.png" alt="Dopamine Shop Logo">
             </div>
 		
-			<form action="" method="post" onsubmit="return validateForm()">
+			<form action="<%= request.getContextPath() %>/login" method="post" onsubmit="return validateForm()">
+			
+				<% if(request.getAttribute("errore")!=null){ %>
+					<p style="color: red; margin-bottom: 2px">Credenziali invalide. Inserire email e password.</p>
+				<%} %>
+					
 				
 				<span id="error_email" style="color:red"></span>
 				<input type="email" id="email" name="email" placeholder="Email" required>
