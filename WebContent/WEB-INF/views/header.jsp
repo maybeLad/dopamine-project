@@ -15,15 +15,21 @@
 	
 	<ul class="right-side">
 		<li><a href="<%= request.getContextPath()%>/search"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-		<li><a href="<%= request.getContextPath()%>/login"><i class="fa-solid fa-user"></i></a></li>
+		<li>
+			
+			<% if(session.getAttribute("utenteLoggato")!=null) {%>
+				<a href="<%= request.getContextPath()%>/user">
+					<i style="color: green;" class="fa-solid fa-user"></i>
+				</a>
+			<% }else { %>
+			<a href="<%= request.getContextPath()%>/login">
+					<i class="fa-solid fa-user"></i>
+				</a>
+			<% } %>
+			
+		</li>
 		<li><a href="<%= request.getContextPath()%>/cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
 	</ul>	
 	
 
 </nav>
-
-
-
-
-
-
