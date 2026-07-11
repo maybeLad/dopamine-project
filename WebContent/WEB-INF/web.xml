@@ -37,6 +37,14 @@
     <servlet-class>it.dopamine.controller.ProductPageServlet</servlet-class>    
    </servlet>
    
+   <servlet>
+  	<servlet-name>ReviewServlet</servlet-name>
+    <servlet-class>it.dopamine.controller.ReviewServlet</servlet-class>    
+   </servlet>
+   
+   
+   
+   
    <!-- Mapping -->
     <servlet-mapping>
         <servlet-name>WelcomeServlet</servlet-name>
@@ -66,6 +74,11 @@
     <servlet-mapping>
         <servlet-name>ProductPageServlet</servlet-name>
         <url-pattern>/productPage</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>ReviewServlet</servlet-name>
+        <url-pattern>/reviews</url-pattern>
     </servlet-mapping>
    
 </web-app>
