@@ -55,41 +55,30 @@
     transition: transform 0.3s ease;
 }
 
+.can h2{
+	font-size: 4rem;
+	font-family: "Archivo Black", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
 
 
 .can #classic_text {
-	font-size: 4rem;
 	color: #3B2FC9;
-	font-family: "Archivo Black", sans-serif;
-	font-weight: 400;
-	font-style: normal;
 }
 
 .can #peach_text {
-	font-size: 4rem;
 	color: #E8732F;
-	font-family: "Archivo Black", sans-serif;
-	font-weight: 400;
-	font-style: normal;
 }
 
 .can #lemon_text {
-	font-size: 4rem;
 	color: #D4E832;
-	font-family: "Archivo Black", sans-serif;
-	font-weight: 400;
-	font-style: normal;
 }
 
 .can #sugar_free_text {
-	font-size: 4rem;
 	color: #7DD4E8;
-	font-family: "Archivo Black", sans-serif;
-	font-weight: 400;
-	font-style: normal;
 }
-
-
 
 #catalogue {
     display: flex;
@@ -103,6 +92,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     font-weight: bold;
+    margin-top: 5rem;
 }
 
 #catalogue button {

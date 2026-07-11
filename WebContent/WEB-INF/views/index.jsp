@@ -47,39 +47,35 @@
 		</div>
 	</section>
 	
-	<section class="can-section">
-		<div class="can">
-			<a href="<%= request.getContextPath() %>/products/classic"><img alt="Classic" src="<%= request.getContextPath() %>/images/classic.png"></a>
-			<h2 id="classic_text">CLASSIC</h2>
-
-		</div>
-	
-		<div class="can">
-			<a href="<%= request.getContextPath() %>/products/peach"><img alt="Peach" src="<%= request.getContextPath() %>/images/peach.png"></a>
-			<h2 id="peach_text">PEACH</h2>
-
-		</div>
-	
-		<div class="can">
-			<a href="<%= request.getContextPath() %>/products/lemon"><img alt="Lemon" src="<%= request.getContextPath() %>/images/lemon.png"></a>
-			<h2 id="lemon_text">LEMON</h2>
-
-		</div>
-		
-		<div class="can">
-			<a href="<%= request.getContextPath() %>/products/sugar_free"><img alt="Sugar free" src="<%= request.getContextPath() %>/images/sugar_free.png"></a>
-			<h2 id="sugar_free_text">SUGAR FREE</h2>
-		</div>
-	
-	</section>
-	
 	<div id="catalogue">
 		<p>Vuoi scoprire di più <br> sui nostri prodotti?</p>
 		<button onclick="window.location.href='<%= request.getContextPath() %>/catalogue'">Vai al catalogo</button>	
+		<p>Questi sono alcuni prodotti che puoi trovare sul sito!
 	</div>
 	
+	<section class="can-section">
+		<div class="can">
+			<a href="<%= request.getContextPath() %>/productPage?productName=classic"><img alt="Classic" src="<%= request.getContextPath() %>/images/classic.png"></a>
+			<h2 id="classic_text">CLASSIC</h2>
+		</div>
 	
-
+		<div class="can">
+			<a href="<%= request.getContextPath() %>/productPage?productName=peach"><img alt="Peach" src="<%= request.getContextPath() %>/images/peach.png"></a>
+			<h2 id="peach_text">PEACH</h2>
+		</div>
+	
+		<div class="can">
+			<a href="<%= request.getContextPath() %>/productPage?productName=lemon"><img alt="Lemon" src="<%= request.getContextPath() %>/images/lemon.png"></a>
+			<h2 id="lemon_text">LEMON</h2>
+		</div>
+		
+		<div class="can">
+			<a href="<%= request.getContextPath() %>/productPage?productName=Sugar free"><img alt="Sugar free" src="<%= request.getContextPath() %>/images/sugar_free.png"></a>
+			<h2 id="sugar_free_text">SUGAR FREE</h2>
+		</div>
+	</section>
+	
+	
 	<script type="text/javascript">
 		var counter = 0;
 		var slides = document.querySelectorAll('.st-first, .st');
