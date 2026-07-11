@@ -3,7 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Icon -->
+	<meta charset="UTF-8">
+	<title>Dopamine Shop - Login</title>
+	
+	<!-- ICON -->
     <link rel="icon" type="image/jpeg" href="${pageContext.request.contextPath}/images/logo.png">
 
 	<!-- CSS -->
@@ -14,15 +17,10 @@
 	<!--  FONTS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-	
-	
-<meta charset="UTF-8">
-<title>Dopamine Shop - Login</title>
 </head>
 <body>
 	<div id="container">
 	
-		<!-- Gestione dei campi di input -->
 		<div class="login">
             
             <div class="logo-container">
@@ -31,16 +29,12 @@
 		
 			<form action="" method="post" onsubmit="return validateForm()">
 				
-				<!-- Campo per inserire l'email con annesso span per eventuali errori-->
 				<span id="error_email" style="color:red"></span>
 				<input type="email" id="email" name="email" placeholder="Email" required>
 
-				<!-- Campo per inserire l'email con annesso span per eventuali errori-->
 				<span id="error_password" style="color:red"></span>
 				<input type="password" id="password"name="password" placeholder="Password" minlength="8" maxlength="20" required>
 				
-				
-				<!--Bottone per inviare i dati -->
 				<input type="submit" value="Login">
 				
 			</form>
@@ -52,7 +46,7 @@
 		</div>
 	</div>
 	
-	<!-- Scripts -->
+	<!-- SCRIPTS -->
 	<script src="${pageContext.request.contextPath}/scripts/validationScript.js"></script>
 	<script src="${pageContext.request.contextPath}/scripts/loginValidation.js"></script>
 </body>

@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dopamine Shop</title>
 
-	<!-- Logo anche nella scheda in alto del browser -->
+	<!-- ICON -->
     <link rel="icon" type="image/jpeg" href="<%= request.getContextPath() %>/images/logo.png">
     
 	<!-- FONTS -->

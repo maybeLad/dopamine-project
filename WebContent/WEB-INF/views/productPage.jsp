@@ -7,15 +7,17 @@
 <%
 	Prodotto prodotto = (Prodotto) request.getAttribute("productName");
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
+	<title>Dopamine Shop - Prodotto</title>
 
-	<!-- Logo anche nella scheda in alto del browser -->
+	<!-- ICON -->
 	<link rel="icon" type="image/jpeg" href="<%=request.getContextPath()%>/images/logo.png">
 
-<!-- FONTS -->
+	<!-- FONTS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 	<!-- CSS -->
@@ -23,7 +25,6 @@
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/styles/footer.css">	
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/styles/productPage.css">
 
-<title>Dopamine Shop</title>
 </head>
 <body>
 	<header>

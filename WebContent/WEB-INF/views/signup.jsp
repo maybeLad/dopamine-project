@@ -3,15 +3,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<title>Dopamine Shop - Sign Up</title>
 
+	<!-- ICON -->
+	<link rel="icon" type="image/jpeg" href="<%=request.getContextPath()%>/images/logo.png">
+	
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/signup.css">
 	
 	<!--  FONTS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<meta charset="UTF-8">
-<title>Dopamine Shop - Sign Up</title>
 </head>
 <body>
 	<div id="container">
