@@ -9,11 +9,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.mysql.cj.xdevapi.PreparableStatement;
 
 public class UtenteDAO {
-    public int registraUtente(Utente utente) throws ClassNotFoundException {
-        String INSERT_USER_SQL = "INSERT INTO utente" +
+    public int registraUtente(Utente utente) {
+        String INSERT_USER_SQL = "INSERT INTO utenti" +
                 " (admin, nome, cognome, indirizzo, telefono, email, password) VALUES " +
                 "(?, ?, ?, ?, ?, ?, ?)";
 
@@ -34,7 +36,7 @@ public class UtenteDAO {
             ris = ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.getMessage();
+            e.printStackTrace();
         }
 
 
@@ -61,6 +63,7 @@ public class UtenteDAO {
             		u.setEmail(rs.getString("email"));
             		u.setIndirizzo(rs.getString("indirizzo"));
             		u.setTelefono(rs.getString("telefono"));
+            		u.setPassword(rs.getString("password"));
             	}
             }
 
@@ -73,26 +76,28 @@ public class UtenteDAO {
     } 
     
     public Utente checkLogin(String email, String password) {
-    	String CHECK_USER = "SELECT * FROM utenti WHERE email = ? AND password = ?";
+    	String CHECK_USER = "SELECT * FROM utenti WHERE email = ?";
     	Utente u = null;
     	
     	try(Connection connessione = Connector.getConnection();
     			PreparedStatement ps = connessione.prepareStatement(CHECK_USER)){
     		
     		ps.setString(1, email);
-    		ps.setString(2, password);
     		
     		try(ResultSet rs = ps.executeQuery()){
     			if(rs.next()) {
-    				u = new Utente();
     				
-    				u.setId(rs.getInt("id_utente"));
-            		u.setNome(rs.getString("nome"));
-            		u.setCognome(rs.getString("cognome"));
-            		u.setEmail(email);
-            		u.setIndirizzo(rs.getString("indirizzo"));
-            		u.setTelefono(rs.getString("telefono"));
-    				
+    				String hashPassword = rs.getString("password");
+    				if(BCrypt.checkpw(password, hashPassword)) {
+	    				u = new Utente();
+	    				
+	    				u.setId(rs.getInt("id_utente"));
+	            		u.setNome(rs.getString("nome"));
+	            		u.setCognome(rs.getString("cognome"));
+	            		u.setEmail(email);
+	            		u.setIndirizzo(rs.getString("indirizzo"));
+	            		u.setTelefono(rs.getString("telefono"));
+    				}
     			}
     		}
     		
