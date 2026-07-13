@@ -10,6 +10,8 @@
 	<link rel="icon" type="image/jpeg" href="<%=request.getContextPath()%>/images/logo.png">
 	
 	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/header.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/footer.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/signup.css">
 	
 	<!--  FONTS -->
@@ -17,9 +19,12 @@
 
 </head>
 <body>
+	<header>
+		<jsp:include page="header.jsp"></jsp:include>
+	</header>
+	
 	<div id="container">
 	
-		<!-- Gestione dei campi di input -->
 		<div class="signup">
 
             <div class="logo-container">
@@ -58,6 +63,10 @@
 	<!-- Scripts -->
 	<script src="${pageContext.request.contextPath}/scripts/validationScript.js"></script>
 	<script src="${pageContext.request.contextPath}/scripts/signupValidation.js"></script>
+	
+	<footer>
+		<jsp:include page="footer.jsp"></jsp:include>
+	</footer>
 	
 </body>
 </html>

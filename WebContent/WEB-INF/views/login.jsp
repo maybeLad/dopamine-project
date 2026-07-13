@@ -19,6 +19,11 @@
 
 </head>
 <body>
+
+	<header>
+		<jsp:include page="header.jsp"></jsp:include>
+	</header>
+
 	<div id="container">
 	
 		<div class="login">
@@ -54,5 +59,10 @@
 	<!-- SCRIPTS -->
 	<script src="${pageContext.request.contextPath}/scripts/validationScript.js"></script>
 	<script src="${pageContext.request.contextPath}/scripts/loginValidation.js"></script>
+	
+	<footer>
+		<jsp:include page="footer.jsp"></jsp:include>
+	</footer>
+
 </body>
 </html>
