@@ -16,9 +16,20 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
-    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+	        throws ServletException, IOException {
+
+	    if ("logout".equals(request.getParameter("type"))) {
+	        HttpSession session = request.getSession(false);
+	        if (session != null && session.getAttribute("utenteLoggato") != null) {
+	            session.invalidate();
+	        }
+	        response.sendRedirect(request.getContextPath() + "/login");
+	        return; 
+	    }
+
+	    request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+	}
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,7 +42,7 @@ public class LoginServlet extends HttpServlet {
     	if(u != null) {
     		HttpSession session = request.getSession();
             session.setAttribute("utenteLoggato", u);
-            response.sendRedirect(request.getContextPath());
+            request.getRequestDispatcher("/WEB-INF/views/user.jsp").forward(request, response);
     	}else {
     		request.setAttribute("errore", "Credenziali errate!");
             request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);

@@ -19,6 +19,10 @@
 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/header.css">
 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/footer.css">
 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/user.css">
+	
+	<!-- FONTS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	
 
 </head>
 <body>
@@ -62,6 +66,13 @@
 		</div>
 
 	</div>
+	
+	<div class="navigation-buttons">
+	    <a href="<%=request.getContextPath()%>"><i class="fa-solid fa-arrow-left-long"></i> HOME PAGE</a>
+	    <span class="separator">•</span>
+	    <a href="<%=request.getContextPath()%>/login?type=logout">LOGOUT</a>
+	</div>
+
 
 	<footer>
 		<jsp:include page="footer.jsp"></jsp:include>

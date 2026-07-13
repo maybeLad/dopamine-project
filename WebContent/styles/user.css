@@ -45,3 +45,35 @@
 	font-weight: 700;
 	color: #1F2937;
 }
+
+.navigation-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+	margin: 2rem auto 3rem auto;
+	text-align: center;
+}
+
+ a {
+	color: #6F778E;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 1.3rem;
+	border-bottom: 1px solid transparent;
+	transition: all 0.2s ease;
+}
+
+ a:hover {
+	color: #3F465C;
+	border-bottom-color: #3F465C;
+}
+
+.navigation-buttons .separator {
+	color: #BEC6E0;
+	font-size: 14px;
+}
+
+.navigation-buttons i {
+	margin-right: 6px;
+}
