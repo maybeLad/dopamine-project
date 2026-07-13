@@ -9,7 +9,7 @@ import it.dopamine.util.Connector;
 
 public class OrdineDAO {
 	public int getNumberOfOrders(int id_utente) {
-		String COUNT_ORDERS = "SELECT COUNT(id_ordini) as OrdersUser FROM ordini WHERE id_utente = ?";
+		String COUNT_ORDERS = "SELECT COUNT(id_ordine) as OrdersUser FROM ordini WHERE id_utente = ?";
 		int counter = 0;
 		
 		try(Connection connessione = Connector.getConnection();
