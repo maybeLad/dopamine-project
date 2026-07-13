@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+.user-container {
+	display: flex;
+	justify-content: center;
+	gap: 6rem;
+	margin: 3rem 2rem;
+	flex-wrap: wrap;
+}
+
+.user-info,
+.user-usage {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	max-width: 22rem;
+	padding: 1.5rem 0;
+}
+
+.user-info h1,
+.user-usage h1 {
+	color: #6F778E;
+	font-size: 2rem;
+	margin: 0 0 0.5rem 0;
+}
+
+.user-info h2,
+.user-usage h2 {
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #9199AA;
+	margin: 0;
+}
+
+.user-info p,
+.user-usage p {
+	margin: 0.2rem 0 0 0;
+	line-height: 1.5;
+	color: #2E2E2E;
+}
+
+.usage-highlight {
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: #1F2937;
+}
