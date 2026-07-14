@@ -33,6 +33,7 @@ public class ProdottoDAO {
             		product.setDescrizione(rs.getString("descrizione"));
             		product.setPrezzo(rs.getDouble("prezzo"));
             		product.setUrl_img(rs.getString("url_immagine"));
+            		product.setStock(rs.getInt("stock"));
             		
             	}
             }
