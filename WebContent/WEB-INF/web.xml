@@ -47,6 +47,11 @@
     <servlet-class>it.dopamine.controller.UserPageServlet</servlet-class>    
    </servlet>
    
+   <servlet>
+  	<servlet-name>NewsServlet</servlet-name>
+    <servlet-class>it.dopamine.controller.NewsServlet</servlet-class>    
+   </servlet>
+   
    
    
    <!-- Mapping -->
@@ -88,6 +93,11 @@
     <servlet-mapping>
         <servlet-name>UserPageServlet</servlet-name>
         <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+        <servlet-name>NewsServlet</servlet-name>
+        <url-pattern>/news</url-pattern>
     </servlet-mapping>
    
 </web-app>
