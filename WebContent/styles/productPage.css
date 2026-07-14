@@ -25,7 +25,6 @@
     margin: 0;
 }
 
-
 .product-info h2 {
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -40,14 +39,12 @@
     color: #2E2E2E;
 }
 
-/* prezzo evidenziato, non un semplice paragrafo come la descrizione */
 .product-price {
     font-size: 1.6rem;
     font-weight: 700;
     color: #1F2937;
 }
 
-/* riga dei bottoni, quando li aggiungerai */
 .product-actions {
     display: flex;
     gap: 0.75rem;
@@ -73,13 +70,35 @@
     color: #fff;
 }
 
-.btn-buy-now {
-    background-color: #6F778E;
-    color: #fff;
-    border-color: #6F778E;
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
 }
 
-.btn-buy-now:hover {
-    background-color: #565D70;
-    border-color: #565D70;
+.qty-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #BEC6E0;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #3F465C;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.qty-btn:hover {
+    background-color: #DAE2FD;
+}
+
+#quantity {
+    width: 50px;
+    text-align: center;
+    padding: 8px 4px;
+    border: 1px solid #BEC6E0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #3F465C;
 }
