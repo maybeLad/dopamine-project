@@ -16,8 +16,8 @@ import com.mysql.cj.xdevapi.PreparableStatement;
 public class UtenteDAO {
     public int registraUtente(Utente utente) {
         String INSERT_USER_SQL = "INSERT INTO utenti" +
-                " (admin, nome, cognome, indirizzo, telefono, email, password) VALUES " +
-                "(?, ?, ?, ?, ?, ?, ?)";
+                " (admin, nome, cognome, indirizzo, telefono, email, password, metodo_pagamento, carta_ultime_4_cifre, carta_scadenza) VALUES " +
+                "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         int ris = 0;
         
@@ -32,6 +32,9 @@ public class UtenteDAO {
             ps.setString(5, utente.getTelefono());
             ps.setString(6, utente.getEmail());
             ps.setString(7, utente.getPassword());
+            ps.setString(8, utente.getMetodo_pagamento());
+            ps.setString(9, utente.getCarta_ultime_4_cifre());
+            ps.setString(10, utente.getScadenza_carta());
 
             ris = ps.executeUpdate();
 
@@ -64,6 +67,9 @@ public class UtenteDAO {
             		u.setIndirizzo(rs.getString("indirizzo"));
             		u.setTelefono(rs.getString("telefono"));
             		u.setPassword(rs.getString("password"));
+            		u.setMetodo_pagamento(rs.getString("metodo_pagamento"));
+            		u.setCarta_ultime_4_cifre(rs.getString("carta_ultime_4_cifre"));
+            		u.setScadenza_carta(rs.getString("carta_scadenza"));
             	}
             }
 
@@ -97,6 +103,9 @@ public class UtenteDAO {
 	            		u.setEmail(email);
 	            		u.setIndirizzo(rs.getString("indirizzo"));
 	            		u.setTelefono(rs.getString("telefono"));
+	            		u.setMetodo_pagamento(rs.getString("metodo_pagamento"));
+	            		u.setCarta_ultime_4_cifre(rs.getString("carta_ultime_4_cifre"));
+	            		u.setScadenza_carta(rs.getString("carta_scadenza"));
     				}
     			}
     		}

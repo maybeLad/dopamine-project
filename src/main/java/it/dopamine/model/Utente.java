@@ -9,6 +9,9 @@ public class Utente {
     private String telefono;
     private String email;
     private String password;
+    private String metodo_pagamento;
+    private String carta_ultime_4_cifre;
+    private String scadenza_carta;
 
     //Costruttore
     public Utente() {
@@ -43,8 +46,20 @@ public class Utente {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    public void setMetodo_pagamento(String metodo_pagamento) {
+		this.metodo_pagamento = metodo_pagamento;
+	}
+    
+	public void setCarta_ultime_4_cifre(String carta_ultime_4_cifre) {
+		this.carta_ultime_4_cifre = carta_ultime_4_cifre;
+	}
 
-    //Getters
+	public void setScadenza_carta(String scadenza_carta) {
+		this.scadenza_carta = scadenza_carta;
+	}
+
+	//Getters
     public int getId() {
         return id;
     }
@@ -69,4 +84,17 @@ public class Utente {
     public String getPassword() {
         return password;
     }
+
+	public String getMetodo_pagamento() {
+		return metodo_pagamento;
+	}
+	
+	public String getCarta_ultime_4_cifre() {
+		return carta_ultime_4_cifre;
+	}
+
+	public String getScadenza_carta() {
+		return scadenza_carta;
+	}
+	
 }

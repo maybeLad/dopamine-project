@@ -150,7 +150,6 @@ input.error:focus {
     border: 2px solid red;
 }
 
-/* ===== RESPONSIVE ===== */
 
 @media (max-width: 1630px) {
     #container {

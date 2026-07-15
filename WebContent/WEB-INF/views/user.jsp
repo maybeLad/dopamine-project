@@ -53,6 +53,19 @@
 			</p>
 			<p><a href="test">Cambia indirizzo</a></p>
 			
+			<h2>Metodo di pagamento</h2>
+			<p><% if("carta".equals(u.getMetodo_pagamento())){%>
+				Metodo di pagamento: <%= u.getMetodo_pagamento() %> <br>
+				Numero carta: ****.****.****.<%=u.getCarta_ultime_4_cifre() %> <br>
+				Scadenza: <%= u.getScadenza_carta() %>
+			
+				<% } else { %>
+					<%= u.getMetodo_pagamento() %>
+				<% } %>
+			</p>
+			
+			<p><a href="test">Cambia metodo di pagamento</a></p>
+			
 			<h2>Password</h2>
 			<p><a href="test">Cambia password</a></p>
 		</div>

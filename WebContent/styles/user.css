@@ -20,13 +20,13 @@
 .user-info h1,
 .user-usage h1 {
 	color: #6F778E;
-	font-size: 2rem;
+	font-size: 3rem;
 	margin: 0 0 0.5rem 0;
 }
 
 .user-info h2,
 .user-usage h2 {
-	font-size: 0.85rem;
+	font-size: 1.5rem;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 	color: #9199AA;
@@ -38,12 +38,27 @@
 	margin: 0.2rem 0 0 0;
 	line-height: 1.5;
 	color: #2E2E2E;
+	font-size: 1.2rem;
 }
 
 .usage-highlight {
 	font-size: 1.6rem;
 	font-weight: 700;
 	color: #1F2937;
+}
+
+.user-info a {
+	color: #6F778E;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 1.4rem;
+	border-bottom: 1px solid transparent;
+	transition: all 0.2s ease;
+}
+
+.user-info a:hover {
+	color: #3F465C;
+	border-bottom-color: #3F465C;
 }
 
 .navigation-buttons {
@@ -55,7 +70,7 @@
 	text-align: center;
 }
 
- a {
+.navigation-buttons a {
 	color: #6F778E;
 	text-decoration: none;
 	font-weight: 600;
@@ -64,7 +79,7 @@
 	transition: all 0.2s ease;
 }
 
- a:hover {
+.navigation-buttons a:hover {
 	color: #3F465C;
 	border-bottom-color: #3F465C;
 }
