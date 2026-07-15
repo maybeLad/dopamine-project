@@ -52,6 +52,11 @@
     <servlet-class>it.dopamine.controller.NewsServlet</servlet-class>    
    </servlet>
    
+   <servlet>
+  	<servlet-name>ChangePasswordServlet</servlet-name>
+    <servlet-class>it.dopamine.controller.ChangePasswordServlet</servlet-class>    
+   </servlet>
+   
    
    
    <!-- Mapping -->
@@ -98,6 +103,11 @@
     <servlet-mapping>
         <servlet-name>NewsServlet</servlet-name>
         <url-pattern>/news</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+        <servlet-name>ChangePasswordServlet</servlet-name>
+        <url-pattern>/changePassword</url-pattern>
     </servlet-mapping>
    
 </web-app>

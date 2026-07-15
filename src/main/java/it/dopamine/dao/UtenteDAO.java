@@ -118,5 +118,43 @@ public class UtenteDAO {
     	
     	return u;
     }
-    
+
+    public boolean cambiaPassword(String email, String oldPassword, String newPassword) {
+        final String TAKE_USER = "SELECT password FROM utenti WHERE email = ?";
+
+        try (Connection connessione = Connector.getConnection();
+             PreparedStatement ps = connessione.prepareStatement(TAKE_USER)) {
+
+            ps.setString(1, email);
+
+            try (ResultSet rs = ps.executeQuery()) {
+
+                if (rs.next()) {
+                    String passwordSalvata = rs.getString("password");
+
+                    if (BCrypt.checkpw(oldPassword, passwordSalvata)) {
+                        String updateSql = "UPDATE utenti SET password = ? WHERE email = ?";
+                        String nuovoHash = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+
+                        try (PreparedStatement psUpdate = connessione.prepareStatement(updateSql)) {
+                            psUpdate.setString(1, nuovoHash);
+                            psUpdate.setString(2, email);
+                            psUpdate.executeUpdate();
+                            return true;
+                        }
+
+                    } else {
+                        return false;
+                    }
+
+                } else {
+                    return false;
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

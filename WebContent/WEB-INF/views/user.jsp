@@ -67,7 +67,7 @@
 			<p><a href="test">Cambia metodo di pagamento</a></p>
 			
 			<h2>Password</h2>
-			<p><a href="test">Cambia password</a></p>
+			<p><a href="<%=request.getContextPath()%>/changePassword">Cambia password</a></p>
 		</div>
 
 		<div class="user-usage">
