@@ -101,7 +101,7 @@ public class ProdottoDAO {
 				}	
 
 			} catch (SQLException e) {
-				e.getMessage();
+				e.printStackTrace();
 			}
 
 			

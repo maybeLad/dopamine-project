@@ -11,8 +11,6 @@ import java.sql.Statement;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-import com.mysql.cj.xdevapi.PreparableStatement;
-
 public class UtenteDAO {
     public int registraUtente(Utente utente) {
         String INSERT_USER_SQL = "INSERT INTO utenti" +
@@ -74,7 +72,7 @@ public class UtenteDAO {
             }
 
         } catch (SQLException e) {
-            e.getMessage();
+            e.printStackTrace();
         }
 
 
@@ -113,7 +111,7 @@ public class UtenteDAO {
     		
     		
     	}catch (SQLException e) {
-    		e.getMessage();
+    		e.printStackTrace();
     	}
     	
     	return u;

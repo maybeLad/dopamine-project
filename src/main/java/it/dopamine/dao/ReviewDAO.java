@@ -38,10 +38,10 @@ public class ReviewDAO {
 				}	
 
 			} catch (SQLException e) {
-				e.getMessage();
+				e.printStackTrace();
 			}
 		} catch (ClassNotFoundException e) {
-			e.getMessage();
+			e.printStackTrace();
 		}
 		
 		return arr;
