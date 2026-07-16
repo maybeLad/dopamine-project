@@ -1,24 +1,27 @@
 package it.dopamine.util;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 public class Connector {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/dopamine?useSSL=false&serverTimezone=UTC";
-    private static final String USER = "root";
-    private static final String PASSWORD = "admin";
+    private static DataSource dataSource;
 
     static {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException("Driver non trovato", e);
+            Context initContext = new InitialContext();
+            Context envContext = (Context) initContext.lookup("java:/comp/env");
+            dataSource = (DataSource) envContext.lookup("jdbc/dopamineDB");
+        } catch (NamingException e) {
+            throw new RuntimeException("DataSource non trovato", e);
         }
     }
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+        return dataSource.getConnection();
     }
 }
