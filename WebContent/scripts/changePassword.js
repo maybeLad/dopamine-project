@@ -9,21 +9,21 @@ document.getElementById("changePasswordForm").addEventListener("submit", functio
     document.getElementById("error_confirm").innerHTML = "";
     document.getElementById("messaggio").innerHTML = "";
 
-    var oldPassword = document.getElementById("oldPassword").value;
-    var newPassword = document.getElementById("newPassword").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+    let oldPassword = document.getElementById("oldPassword").value;
+    let newPassword = document.getElementById("newPassword").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
 
     if (newPassword !== confirmPassword) {
         document.getElementById("error_confirm").innerHTML = "Le password non coincidono";
         return;
     }
 
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4) {
             if (this.status == 200) {
-                var risposta = JSON.parse(this.responseText);
+                let risposta = JSON.parse(this.responseText);
 
                 if (risposta.success) {
                     document.getElementById("messaggio").innerHTML = "Password aggiornata con successo!";
@@ -40,7 +40,7 @@ document.getElementById("changePasswordForm").addEventListener("submit", functio
         }
     };
 
-    var contextPath = document.getElementById("contextPath").value;
+    let contextPath = document.getElementById("contextPath").value;
     xhr.open("POST", contextPath + "/changePassword", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("oldPassword=" + encodeURIComponent(oldPassword) + "&newPassword=" + encodeURIComponent(newPassword));

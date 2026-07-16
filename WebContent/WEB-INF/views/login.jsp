@@ -10,11 +10,11 @@
     <link rel="icon" type="image/jpeg" href="${pageContext.request.contextPath}/images/logo.png">
 
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/login.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/form.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/header.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/footer.css">
 
-	<!--  FONTS -->
+	<!-- FONTS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -26,8 +26,8 @@
 
 	<div id="container">
 	
-		<div class="login">
-            
+		<div class="form-card">
+
             <div class="logo-container">
                 <img src="${pageContext.request.contextPath}/images/logo.png" alt="Dopamine Shop Logo">
             </div>
@@ -38,12 +38,11 @@
 					<p style="color: red; margin-bottom: 2px">Credenziali invalide. Inserire email e password.</p>
 				<%} %>
 					
-				
 				<span id="error_email" style="color:red"></span>
 				<input type="email" id="email" name="email" placeholder="Email" required>
 
 				<span id="error_password" style="color:red"></span>
-				<input type="password" id="password"name="password" placeholder="Password" minlength="8" maxlength="20" required>
+				<input type="password" id="password" name="password" placeholder="Password" minlength="8" maxlength="20" required>
 				
 				<input type="submit" value="Login">
 				

@@ -12,9 +12,9 @@
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/header.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/footer.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/signup.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/form.css">
 	
-	<!--  FONTS -->
+	<!-- FONTS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -25,7 +25,7 @@
 	
 	<div id="container">
 	
-		<div class="signup">
+		<div class="form-card">
 
             <div class="logo-container">
                 <img src="${pageContext.request.contextPath}/images/logo.png" alt="Dopamine Shop Logo">
