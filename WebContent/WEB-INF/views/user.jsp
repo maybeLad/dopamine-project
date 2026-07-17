@@ -56,7 +56,7 @@
 				<% if(u.getIndirizzo()==null){ %>
 					<a href="<%=request.getContextPath()%>/setAddress">Aggiungi indirizzo</a>
 				<%} else { %>
-					<a href="<%=request.getContextPath()%>/changeAddress">Cambia indirizzo</a>
+					<a href="<%=request.getContextPath()%>/setAddress">Cambia indirizzo</a>
 				<%} %>
 				</p>
 			
