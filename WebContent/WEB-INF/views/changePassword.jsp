@@ -62,7 +62,6 @@
 	<!-- SCRIPTS -->
 	
 	<script type="text/javascript" src="<%=request.getContextPath()%>/scripts/validationScript.js"></script>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/scripts/changePasswordValidation.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/scripts/changePassword.js"></script>
 </body>
 </html>

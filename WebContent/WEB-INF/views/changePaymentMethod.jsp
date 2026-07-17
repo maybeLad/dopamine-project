@@ -35,7 +35,7 @@
 
 			<h1>Cambia Metodo di pagamento</h1>
 
-			<form id="changePaymentMethodForm" method="POST">
+			<form id="changePaymentMethodForm">
 
 				<span id="error_metodo" style="color:red"></span>
 				<select id="metodoPagamento" name="metodoPagamento" required>

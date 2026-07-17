@@ -61,7 +61,7 @@
 				</p>
 			
 			<h2>Metodo di pagamento</h2>
-			<p><% if("carta".equals(u.getMetodo_pagamento())){%>
+			<p><% if("Carta".equals(u.getMetodo_pagamento())){%>
 				Metodo di pagamento: <%= u.getMetodo_pagamento() %> <br>
 				Numero carta: ****.****.****.<%=u.getCarta_ultime_4_cifre() %> <br>
 				Scadenza: <%= u.getScadenza_carta() %>
