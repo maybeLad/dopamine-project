@@ -173,4 +173,31 @@ public class UtenteDAO {
             return false;
         }
     }
+
+    public boolean changePaymentMethod(String metodoPagamento, String ultimeCifreCarta, String scadenzaCarta, int id) {
+
+        final String UPDATE_SQL = 
+                "UPDATE utenti SET metodo_pagamento = ?, carta_ultime_4_cifre = ?, carta_scadenza = ? WHERE id_utente = ?";
+
+        try (Connection connessione = Connector.getConnection();
+             PreparedStatement ps = connessione.prepareStatement(UPDATE_SQL)) {
+
+
+            ps.setString(1, metodoPagamento);
+            ps.setString(2, ultimeCifreCarta);
+            ps.setString(3, scadenzaCarta);
+            ps.setInt(4, id);
+
+
+            int righeAggiornate = ps.executeUpdate();
+
+            return righeAggiornate > 0;
+
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
