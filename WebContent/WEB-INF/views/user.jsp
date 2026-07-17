@@ -48,10 +48,17 @@
 			<p>
 				<% if(u.getIndirizzo()==null) { %>
 					Nessun indirizzo inserito.
-				<% } else u.getIndirizzo(); %>
+				<% } else { %> <%= u.getIndirizzo() %> 
+				<% }	 %>
 			
 			</p>
-			<p><a href="test">Cambia indirizzo</a></p>
+			<p>
+				<% if(u.getIndirizzo()==null){ %>
+					<a href="<%=request.getContextPath()%>/setAddress">Aggiungi indirizzo</a>
+				<%} else { %>
+					<a href="<%=request.getContextPath()%>/changeAddress">Cambia indirizzo</a>
+				<%} %>
+				</p>
 			
 			<h2>Metodo di pagamento</h2>
 			<p><% if("carta".equals(u.getMetodo_pagamento())){%>
@@ -64,7 +71,7 @@
 				<% } %>
 			</p>
 			
-			<p><a href="test">Cambia metodo di pagamento</a></p>
+			<p><a href="<%=request.getContextPath()%>/changePaymentMethod">Cambia metodo di pagamento</a>
 			
 			<h2>Password</h2>
 			<p><a href="<%=request.getContextPath()%>/changePassword">Cambia password</a></p>

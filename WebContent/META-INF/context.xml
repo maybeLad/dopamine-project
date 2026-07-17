@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
     <Resource name="jdbc/dopamineDB"
-              auth="Container"
-              type="javax.sql.DataSource"
-              maxTotal="20"
-              maxIdle="10"
-              username="root"
-              password="admin"
-              driverClassName="com.mysql.cj.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/dopamine?useSSL=false&amp;serverTimezone=UTC"/>
+          auth="Container"
+          type="javax.sql.DataSource"
+          maxTotal="20"
+          maxIdle="10"
+          username="root"
+          password="admin"
+          driverClassName="com.mysql.cj.jdbc.Driver"
+          url="jdbc:mysql://localhost:3306/dopamine?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC"/>
 </Context>

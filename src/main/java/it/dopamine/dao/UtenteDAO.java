@@ -155,4 +155,22 @@ public class UtenteDAO {
             return false;
         }
     }
+    
+    public boolean changeAddress(String address, int id) {
+        final String UPDATE_SQL = "UPDATE utenti SET indirizzo = ? WHERE id_utente = ?";
+
+        try (Connection connessione = Connector.getConnection();
+             PreparedStatement ps = connessione.prepareStatement(UPDATE_SQL)) {
+
+            ps.setString(1, address);
+            ps.setInt(2, id);
+
+            int righeAggiornate = ps.executeUpdate();
+            return righeAggiornate > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
