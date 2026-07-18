@@ -54,6 +54,9 @@
 								<button type="submit" name="productName" value="<%= prodotto.getNome() %>">
 									<img src="<%=request.getContextPath()%><%= prodotto.getUrl_img() %>" alt="<%= prodotto.getNome() %>">
 								</button>
+								
+								<p class="prodotto-nome"><%= prodotto.getNome() %></p>
+								<p class="prodotto-prezzo">€ <%= prodotto.getPrezzo() %></p>
 							</div>
 
 							<%
