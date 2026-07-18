@@ -74,8 +74,11 @@
 		<servlet-name>ChangePaymentMethodServlet</servlet-name>
 		<servlet-class>it.dopamine.controller.ChangePaymentMethodServlet</servlet-class>
 	</servlet>
-
-
+	
+	<servlet>
+    	<servlet-name>SearchServlet</servlet-name>
+    	<servlet-class>it.dopamine.controller.SearchServlet</servlet-class>
+	</servlet>
 
 	<!-- Mapping -->
 	<servlet-mapping>
@@ -141,6 +144,11 @@
 	<servlet-mapping>
 		<servlet-name>ChangePaymentMethodServlet</servlet-name>
 		<url-pattern>/changePaymentMethod</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+    	<servlet-name>SearchServlet</servlet-name>
+    	<url-pattern>/search</url-pattern>
 	</servlet-mapping>
 
 	<resource-ref>
