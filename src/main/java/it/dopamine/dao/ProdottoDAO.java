@@ -109,7 +109,45 @@ public class ProdottoDAO {
 		return catalogo;
 	}
 
-
-
+	public List<Prodotto> cercaProdotti(String query) {
+		List<Prodotto> risultati = new ArrayList<>();
+ 
+		final String SEARCH = "SELECT p.id_prodotto, p.id_categoria, p.nome, p.descrizione, "
+				+ "p.prezzo, p.stock, p.url_immagine, c.nome AS nome_categoria "
+				+ "FROM prodotti p "
+				+ "JOIN categorie c ON p.id_categoria = c.id_categoria "
+				+ "WHERE p.nome LIKE ? OR p.descrizione LIKE ? OR c.nome LIKE ? "
+				+ "ORDER BY p.nome";
+ 
+		String likeQuery = "%" + query + "%";
+ 
+		try (Connection connessione = Connector.getConnection();
+				PreparedStatement ps = connessione.prepareStatement(SEARCH)) {
+ 
+			ps.setString(1, likeQuery);
+			ps.setString(2, likeQuery);
+			ps.setString(3, likeQuery);
+ 
+			try (ResultSet rs = ps.executeQuery()) {
+				while (rs.next()) {
+					Prodotto p = new Prodotto();
+					p.setId(rs.getInt("id_prodotto"));
+					p.setId_categoria(rs.getInt("id_categoria"));
+					p.setNome(rs.getString("nome"));
+					p.setDescrizione(rs.getString("descrizione"));
+					p.setPrezzo(rs.getDouble("prezzo"));
+					p.setStock(rs.getInt("stock"));
+					p.setUrl_img(rs.getString("url_immagine"));
+					p.setCategoria(rs.getString("nome_categoria"));
+ 
+					risultati.add(p);
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+ 
+		return risultati;
+	}
 }
 
