@@ -149,5 +149,30 @@ public class ProdottoDAO {
  
 		return risultati;
 	}
+	
+	public Prodotto getProdottoById(int idProdotto) {
+        final String SQL = "SELECT * FROM prodotti WHERE id_prodotto = ?";
+        try (Connection conn = Connector.getConnection();
+             PreparedStatement ps = conn.prepareStatement(SQL)) {
+            
+            ps.setInt(1, idProdotto);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    Prodotto p = new Prodotto();
+                    p.setId(rs.getInt("id_prodotto"));
+                    p.setId_categoria(rs.getInt("id_categoria"));
+                    p.setNome(rs.getString("nome"));
+                    p.setDescrizione(rs.getString("descrizione"));
+                    p.setPrezzo(rs.getDouble("prezzo"));
+                    p.setStock(rs.getInt("stock"));
+                    p.setUrl_img(rs.getString("url_immagine"));
+                    return p;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
 
