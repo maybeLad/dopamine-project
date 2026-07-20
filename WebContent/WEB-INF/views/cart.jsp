@@ -8,7 +8,7 @@
     <title>Dopamine Shop - Carrello</title>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/styles/cart.css">
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/header.css">
-    <script src="${pageContext.request.contextPath}/scripts/cartActions.js" defer></script>
+    <script src="${pageContext.request.contextPath}/scripts/removeCartItems.js" defer></script>
 </head>
 <body>
 	<header>

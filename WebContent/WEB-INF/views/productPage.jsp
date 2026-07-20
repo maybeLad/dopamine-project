@@ -75,6 +75,5 @@
 	
 	<!-- SCRIPTS -->
 	<script type="text/javascript" src="<%= request.getContextPath() %>/scripts/increaseQuantity.js"></script>
-	<script type="text/javascript" src="<%= request.getContextPath() %>/scripts/addToCart.js"></script>
 </body>
 </html>
