@@ -10,7 +10,9 @@
     <script src="${pageContext.request.contextPath}/scripts/cartActions.js" defer></script>
 </head>
 <body>
-
+	<header>
+		<jsp:include page="header.jsp"></jsp:include>
+	</header>
     
     <div id="contenitore-carrello" style="padding: 20px; max-width: 1000px; margin: 0 auto;">
         <h2>Il tuo Carrello</h2>
@@ -22,7 +24,7 @@
             if (items == null || items.isEmpty()) {
         %>
             <p>Il tuo carrello è attualmente vuoto.</p>
-            <a href="${pageContext.request.contextPath}/catalogo" class="btn">Torna allo shopping</a>
+            <button onclick="window.location.href='<%= request.getContextPath() %>/catalogue'">Torna allo shopping</button>
         <%
             } else {
         %>
