@@ -38,7 +38,7 @@ public class CheckoutServlet extends HttpServlet {
 
         if (!haIndirizzo) {
             request.setAttribute("redirectReason", "Manca l'indirizzo di spedizione per proseguire con l'ordine.");
-            request.getRequestDispatcher("WEB-INF/views/setAddress.jsp").forward(request, response); 
+            request.getRequestDispatcher("WEB-INF/views/user/setAddress.jsp").forward(request, response); 
             return;
         }
 
@@ -96,7 +96,7 @@ public class CheckoutServlet extends HttpServlet {
             carrelloDAO.svuotaCarrello(utente.getId());
 
             request.setAttribute("successMessage", "Ordine #" + idOrdine + " effettuato con successo!");
-            request.getRequestDispatcher("WEB-INF/views/user/user.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/views/orderComplete.jsp").forward(request, response);
         } else {
             request.setAttribute("errorMessage", "Errore durante la creazione dell'ordine.");
             response.sendRedirect(request.getContextPath() + "/cart");
