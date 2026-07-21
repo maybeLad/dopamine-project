@@ -50,15 +50,14 @@
 			<div class="product-actions">
 				<div class="quantity-selector">
 					<button type="button" class="qty-btn" onclick="decreaseQty()">−</button>
-					<input type="number" id="quantity" name="quantity" value="1" min="1" max="<%=prodotto.getStock()/2%>" readonly>
+					<input type="number" id="quantity" name="quantity" value="1" min="1" max="<%= prodotto.getStock() > 0 ? prodotto.getStock() : 1 %>" readonly>
 					<button type="button" class="qty-btn" onclick="increaseQty()">+</button>
 				</div>
 
 			</div>
 
 			<div class="product-actions">
-				<!-- TO DO addToCart()-->
-				<button class="btn btn-add-cart" onclick="addToCart(<%= prodotto.getId()%>)">Aggiungi al carrello</button>
+				<button type="button" class="btn btn-add-cart" onclick="event.preventDefault(); addToCart(<%= prodotto.getId() %>)">Aggiungi al carrello</button>
 			</div>
 		</div>
 		
@@ -74,6 +73,8 @@
 	</footer>
 	
 	<!-- SCRIPTS -->
-	<script type="text/javascript" src="<%= request.getContextPath() %>/scripts/increaseQuantity.js"></script>
+	<script src="${pageContext.request.contextPath}/scripts/increaseQuantity.js"></script>
+	<script src="${pageContext.request.contextPath}/scripts/addToCart.js"></script>
+</body>
 </body>
 </html>
