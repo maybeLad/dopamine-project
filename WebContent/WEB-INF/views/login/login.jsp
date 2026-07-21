@@ -11,8 +11,8 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/form.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/header.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/footer.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/navigation/header.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/navigation/footer.css">
 
 	<!-- FONTS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -21,7 +21,7 @@
 <body>
 
 	<header>
-		<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="../navigation/header.jsp"></jsp:include>
 	</header>
 
 	<div id="container">
@@ -60,7 +60,7 @@
 	<script src="${pageContext.request.contextPath}/scripts/loginValidation.js"></script>
 	
 	<footer>
-		<jsp:include page="footer.jsp"></jsp:include>
+		<jsp:include page="../navigation/footer.jsp"></jsp:include>
 	</footer>
 
 </body>

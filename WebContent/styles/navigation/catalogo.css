@@ -21,7 +21,7 @@ body{
 .catalogo h3{
     margin-top: 45px;
     margin-bottom: 20px;
-    font-size: 28px;
+    font-size: 28px;	
     border-left: 6px solid #A3ABC4;
     padding-left: 12px;
 }
@@ -60,6 +60,12 @@ body{
     border-radius: 12px;
     transition: transform .25s;
     cursor: pointer;
+}
+
+.griglia-prodotti p {
+	font-size: 1.3rem ;
+	font-weight: bold;
+	
 }
 
 .prodotto img{

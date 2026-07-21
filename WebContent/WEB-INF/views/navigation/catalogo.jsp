@@ -17,8 +17,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 	
 	<!-- CSS -->
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/header.css">
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/catalogo.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/navigation/header.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/navigation/catalogo.css">
 
 </head>
 <body>

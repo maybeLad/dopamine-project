@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 	        return; 
 	    }
 
-	    request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+	    request.getRequestDispatcher("/WEB-INF/views/login/login.jsp").forward(request, response);
 	}
     
     @Override
@@ -42,10 +42,10 @@ public class LoginServlet extends HttpServlet {
     	if(u != null) {
     		HttpSession session = request.getSession();
             session.setAttribute("utenteLoggato", u);
-            request.getRequestDispatcher("/WEB-INF/views/user.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/user/user.jsp").forward(request, response);
     	}else {
     		request.setAttribute("errore", "Credenziali errate!");
-            request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/login/login.jsp").forward(request, response);
     	}
     	
     	

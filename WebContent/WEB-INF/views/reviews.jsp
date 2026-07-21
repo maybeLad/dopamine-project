@@ -17,8 +17,8 @@
     <link rel="icon" type="image/jpeg" href="<%= request.getContextPath() %>/images/logo.png">
     
     <!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/header.css">
-	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/footer.css">
+	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/navigation/header.css">
+	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/navigation/footer.css">
 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/reviews.css">
 	
 	<!-- FONTS -->
@@ -30,7 +30,7 @@
 <body>
 
 	<header>
-		<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="navigation/header.jsp"></jsp:include>
 	</header>
 	
 	<div class="review-container">
@@ -70,7 +70,7 @@
 
 	</div>
 	<footer>
-		<jsp:include page="footer.jsp"></jsp:include>
+		<jsp:include page="navigation/footer.jsp"></jsp:include>
 	</footer>
 
 </body>
