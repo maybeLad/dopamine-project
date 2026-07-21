@@ -174,5 +174,17 @@
 	<error-page>
     	<location>/WEB-INF/views/error_pages/general_error.jsp</location>
 	</error-page>
+	
+	
+	
+	<filter>
+    	<filter-name>AuthFilter</filter-name>
+    	<filter-class>it.dopamine.filter.AuthFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+    	<filter-name>AuthFilter</filter-name>
+    	<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 </web-app>
