@@ -14,14 +14,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/header.css">
+	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/navigation/header.css">
 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/info.css">
 	
 	
 </head>
 <body>
 	<header>
-		<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="navigation/header.jsp"></jsp:include>
 	</header>
 	<br>
 	<div>

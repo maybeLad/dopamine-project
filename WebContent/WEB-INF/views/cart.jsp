@@ -12,7 +12,7 @@
 </head>
 <body>
 	<header>
-		<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="navigation/header.jsp"></jsp:include>
 	</header>
     
     <div id="contenitore-carrello" style="padding: 20px; max-width: 1000px; margin: 0 auto;">

@@ -16,9 +16,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/header.css">
-	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/footer.css">
-	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/index.css">
+	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/navigation/header.css">
+	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/navigation/footer.css">
+	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/styles/navigation/index.css">
 	
 	
 

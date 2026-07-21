@@ -30,7 +30,7 @@ public class SetAddressServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/setAddress.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/user/setAddress.jsp").forward(request, response);
 	}
 
 	/**

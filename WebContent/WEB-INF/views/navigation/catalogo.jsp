@@ -17,14 +17,14 @@
 	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 	
 	<!-- CSS -->
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/header.css">
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/catalogo.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/navigation/header.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/styles/navigation/catalogo.css">
 
 </head>
 <body>
 
 	<header>
-		<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="../navigation/header.jsp"></jsp:include>
 	</header>
 
 	<div class="benvenuto">
@@ -57,6 +57,7 @@
 								
 								<p class="prodotto-nome"><%= prodotto.getNome() %></p>
 								<p class="prodotto-prezzo">€ <%= prodotto.getPrezzo() %></p>
+
 							</div>
 
 							<%
