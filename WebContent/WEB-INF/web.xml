@@ -84,6 +84,11 @@
     	<servlet-name>CartServlet</servlet-name>
     	<servlet-class>it.dopamine.controller.CartServlet</servlet-class>
 	</servlet>
+	
+	<servlet>
+    	<servlet-name>CheckoutServlet</servlet-name>
+    	<servlet-class>it.dopamine.controller.CheckoutServlet</servlet-class>
+	</servlet>
 
 	<!-- Mapping -->
 	<servlet-mapping>
@@ -159,6 +164,11 @@
 	<servlet-mapping>
     	<servlet-name>CartServlet</servlet-name>
     	<url-pattern>/cart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+    	<servlet-name>CheckoutServlet</servlet-name>
+    	<url-pattern>/checkout</url-pattern>
 	</servlet-mapping>
 
 	<resource-ref>
