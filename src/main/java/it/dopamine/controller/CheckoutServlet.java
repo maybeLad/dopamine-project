@@ -1,7 +1,6 @@
 package it.dopamine.controller;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,6 +9,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+import it.dopamine.dao.CarrelloDAO;
 import it.dopamine.dao.OrdineDAO;
 import it.dopamine.dao.ProdottoDAO;
 import it.dopamine.dao.UtenteDAO;
@@ -18,13 +18,14 @@ import it.dopamine.model.Utente;
 
 public class CheckoutServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    private CarrelloDAO carrelloDAO = new CarrelloDAO();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         
         Utente utente = (Utente) session.getAttribute("utenteLoggato");
         if (utente == null) {
-            response.sendRedirect(request.getContextPath() + "/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/login"); 
             return;
         }
 
@@ -37,25 +38,41 @@ public class CheckoutServlet extends HttpServlet {
 
         if (!haIndirizzo) {
             request.setAttribute("redirectReason", "Manca l'indirizzo di spedizione per proseguire con l'ordine.");
-            request.getRequestDispatcher("WEB-INF/views/user.jsp").forward(request, response); 
+            request.getRequestDispatcher("WEB-INF/views/setAddress.jsp").forward(request, response); 
             return;
         }
 
         if (!haPagamento) {
             request.setAttribute("redirectReason", "Manca un metodo di pagamento per completare l'ordine.");
-            request.getRequestDispatcher("WEB-INF/views/user.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/views/changePaymentMethod.jsp").forward(request, response);
             return;
         }
-
+        
+        List<CarrelloItem> carrello = carrelloDAO.getCarrello(utente.getId());
+        
+        double totale = 0;
+        if (carrello != null) {
+            for (CarrelloItem item : carrello) {
+                totale += item.getSubtotale();
+            }
+        }
+        
+        request.setAttribute("totale", totale);
         request.getRequestDispatcher("WEB-INF/views/checkout.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Utente utente = (Utente) session.getAttribute("utenteLoggato");
-        List<CarrelloItem> carrello = (List<CarrelloItem>) session.getAttribute("carrello");
+        
+        if (utente == null) {
+            response.sendRedirect(request.getContextPath() + "/login");
+            return;
+        }
 
-        if (utente == null || carrello == null || carrello.isEmpty()) {
+        List<CarrelloItem> carrello = carrelloDAO.getCarrello(utente.getId());
+
+        if (carrello == null || carrello.isEmpty()) {
             response.sendRedirect(request.getContextPath() + "/cart");
             return;
         }
@@ -76,12 +93,12 @@ public class CheckoutServlet extends HttpServlet {
                 prodottoDAO.scaricaStock(item.getProdotto().getId(), item.getQuantita());
             }
 
-            session.removeAttribute("carrello");
+            carrelloDAO.svuotaCarrello(utente.getId());
 
             request.setAttribute("successMessage", "Ordine #" + idOrdine + " effettuato con successo!");
             request.getRequestDispatcher("WEB-INF/views/user.jsp").forward(request, response);
         } else {
-            request.setAttribute("errorMessage", "Errore durante il completamento dell'ordine. Riprova.");
+            request.setAttribute("errorMessage", "Errore durante la creazione dell'ordine.");
             response.sendRedirect(request.getContextPath() + "/cart");
         }
     }
