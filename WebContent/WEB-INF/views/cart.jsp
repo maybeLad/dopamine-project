@@ -68,7 +68,7 @@
             </div>
             
             <div style="text-align: right;">
-                <a href="${pageContext.request.contextPath}/catalogo" class="btn" style="margin-right: 10px; background: #666; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Continua lo Shopping</a>
+                <a href="${pageContext.request.contextPath}/catalogue" class="btn" style="margin-right: 10px; background: #666; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Continua lo Shopping</a>
                 <a href="${pageContext.request.contextPath}/checkout" class="btn" style="background: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold;">Procedi al Checkout</a>
             </div>
         <%
