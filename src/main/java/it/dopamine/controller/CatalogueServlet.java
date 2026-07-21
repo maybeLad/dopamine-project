@@ -20,6 +20,6 @@ public class CatalogueServlet extends HttpServlet {
 		Map<String, List<Prodotto>> catalogo = (new ProdottoDAO()).getProdottiRaggruppati();
 		request.setAttribute("catalogo", catalogo);
 
-		request.getRequestDispatcher("/WEB-INF/views/catalogo.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/navigation/catalogo.jsp").forward(request, response);
 	}
 }

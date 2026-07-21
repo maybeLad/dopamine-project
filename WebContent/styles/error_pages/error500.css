@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+.error-container {
+	min-height: 32rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 3rem 1.5rem;
+	background-color: #EEF0FF;
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+.can {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.can-icon {
+	font-size: 4rem;
+	color: #C0392B;
+	animation: shake 1.8s ease-in-out infinite;
+}
+
+.spark {
+	position: absolute;
+	color: #DAE2FD;
+	font-size: 1.4rem;
+	animation: flicker 1.2s ease-in-out infinite;
+}
+
+.spark-1 {
+	top: -10px;
+	left: -15px;
+	animation-delay: 0s;
+}
+
+.spark-2 {
+	top: 10px;
+	right: -20px;
+	animation-delay: 0.3s;
+}
+
+.spark-3 {
+	bottom: -12px;
+	left: 10px;
+	animation-delay: 0.6s;
+}
+
+.error-container h1 {
+	font-size: 6rem;
+	font-weight: 800;
+	color: #3F465C;
+	margin: 0;
+	line-height: 1;
+}
+
+.error-container h2 {
+	font-size: 1.6rem;
+	color: #6F778E;
+	margin: 0.5rem 0 1.5rem 0;
+	font-weight: 600;
+}
+
+.error-container p {
+	max-width: 30rem;
+	color: #3F465C;
+	line-height: 1.5;
+	margin: 0.3rem 0;
+}
+
+.error-container p.sub {
+	color: #8990A8;
+	font-size: 0.9rem;
+}
+
+.btn-back {
+	margin-top: 2rem;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.85rem 1.8rem;
+	background-color: #DAE2FD;
+	color: #3F465C;
+	text-decoration: none;
+	border-radius: 8px;
+	font-weight: 600;
+	font-size: 0.95rem;
+	transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+	background-color: #BEC6E0;
+	color: #283044;
+}
+
+
+@media (max-width: 480px) {
+	.error-container h1 {
+		font-size: 4rem;
+	}
+
+	.error-container h2 {
+		font-size: 1.3rem;
+	}
+
+	.can-icon {
+		font-size: 3.2rem;
+	}
+}

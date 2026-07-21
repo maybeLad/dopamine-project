@@ -24,6 +24,6 @@ public class SearchServlet extends HttpServlet {
 			request.setAttribute("query", query.trim());
 		}
 
-		request.getRequestDispatcher("/WEB-INF/views/search.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/navigation/search.jsp").forward(request, response);
 	}
 }
