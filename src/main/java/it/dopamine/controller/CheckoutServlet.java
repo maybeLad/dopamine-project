@@ -79,7 +79,7 @@ public class CheckoutServlet extends HttpServlet {
             session.removeAttribute("carrello");
 
             request.setAttribute("successMessage", "Ordine #" + idOrdine + " effettuato con successo!");
-            request.getRequestDispatcher("WEB-INF/views/user.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/views/user/user.jsp").forward(request, response);
         } else {
             request.setAttribute("errorMessage", "Errore durante il completamento dell'ordine. Riprova.");
             response.sendRedirect(request.getContextPath() + "/cart");
