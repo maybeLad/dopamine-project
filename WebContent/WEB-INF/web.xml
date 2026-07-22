@@ -89,8 +89,14 @@
     	<servlet-name>CheckoutServlet</servlet-name>
     	<servlet-class>it.dopamine.controller.CheckoutServlet</servlet-class>
 	</servlet>
-
+	
+	<servlet>
+    	<servlet-name>AdminServlet</servlet-name>
+    	<servlet-class>it.dopamine.controller.AdminServlet</servlet-class>
+	</servlet>
+	
 	<!-- Mapping -->
+	
 	<servlet-mapping>
 		<servlet-name>WelcomeServlet</servlet-name>
 		<url-pattern>/welcome</url-pattern>
@@ -169,6 +175,11 @@
 	<servlet-mapping>
     	<servlet-name>CheckoutServlet</servlet-name>
     	<url-pattern>/checkout</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+    	<servlet-name>AdminServlet</servlet-name>
+    	<url-pattern>/adminDashboard</url-pattern>
 	</servlet-mapping>
 
 	<resource-ref>

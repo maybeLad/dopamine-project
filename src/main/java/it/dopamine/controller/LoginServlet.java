@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
                 session.removeAttribute("carrelloOspite");
             }
             
-            request.getRequestDispatcher("/WEB-INF/views/user.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/user/user.jsp").forward(request, response);
     	} else {
     		request.setAttribute("errore", "Credenziali errate!");
             request.getRequestDispatcher("/WEB-INF/views/login/login.jsp").forward(request, response);
