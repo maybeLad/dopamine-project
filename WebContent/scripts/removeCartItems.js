@@ -2,30 +2,40 @@ function removeFromCart(idProdotto) {
     if (!confirm("Vuoi davvero rimuovere questo prodotto dal carrello?")) return;
 
     const contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));
+    const xhr = new XMLHttpRequest();
 
-    fetch(contextPath + "/cart?action=remove&id=" + idProdotto, { 
-        method: "POST" 
-    })
-    .then(res => {
-        if (res.ok) {
+    xhr.open("POST", contextPath + "/cart?action=remove&id=" + idProdotto, true);
+
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
             const rigaProdotto = document.getElementById("prodotto-row-" + idProdotto);
             if (rigaProdotto) {
                 rigaProdotto.remove();
             }
-            return res.text();
-        } else {
-            throw new Error("Impossibile rimuovere il prodotto.");
-        }
-    })
-    .then(nuovoTotale => {
-        if (nuovoTotale) {
-            document.getElementById("totale-carrello").innerText = nuovoTotale + " €";
-            
-            const tabella = document.getElementById("tabella-carrello");
-            if (tabella && tabella.getElementsByTagName("tr").length <= 1) {
-                document.getElementById("contenitore-carrello").innerHTML = "<p>Il tuo carrello è vuoto.</p>";
+
+            const nuovoTotale = xhr.responseText;
+            if (nuovoTotale) {
+                const elementoTotale = document.getElementById("totale-carrello");
+                if (elementoTotale) {
+                    elementoTotale.innerText = nuovoTotale + " €";
+                }
+                
+                const tabella = document.getElementById("tabella-carrello");
+                if (tabella && tabella.getElementsByTagName("tr").length <= 1) {
+                    const contenitore = document.getElementById("contenitore-carrello");
+                    if (contenitore) {
+                        contenitore.innerHTML = "<p>Il tuo carrello è vuoto.</p>";
+                    }
+                }
             }
+        } else {
+            alert("Impossibile rimuovere il prodotto.");
         }
-    })
-    .catch(err => alert(err.message));
+    };
+
+    xhr.onerror = function() {
+        alert("Errore di rete durante la rimozione del prodotto.");
+    };
+
+    xhr.send();
 }
