@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+.ordini-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+.ordini-container h1 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.ordini-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    color: #777;
+}
+
+.ordini-empty i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.ordini-shop-link {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: #222;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.ordini-shop-link:hover {
+    background-color: #444;
+}
+
+.ordini-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ordini-table thead {
+    background-color: #222;
+    color: #fff;
+}
+
+.ordini-table th,
+.ordini-table td {
+    padding: 14px 16px;
+    text-align: left;
+}
+
+.ordini-table tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.15s ease;
+}
+
+.ordini-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.ordini-table tbody tr:hover {
+    background-color: #f7f7f7;
+}
+
+.stato-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.stato-ordinato {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.stato-spedito {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.stato-in_consegna {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.stato-consegnato {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+@media (max-width: 600px) {
+    .ordini-table thead {
+        display: none;
+    }
+
+    .ordini-table, .ordini-table tbody, .ordini-table tr, .ordini-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .ordini-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .ordini-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 10px;
+    }
+
+    .ordini-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #555;
+    }
+}

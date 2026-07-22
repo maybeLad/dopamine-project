@@ -88,6 +88,8 @@
 
 			<h2>Ordini effettuati</h2>
 			<p class="usage-highlight"><%= ordineDAO.getNumberOfOrders(u.getId()) %></p>
+			
+			<p><a href="<%=request.getContextPath()%>/orders">Visualizza ordini</a></p>
 
 		</div>
 

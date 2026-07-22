@@ -16,23 +16,16 @@ public class Ordine {
     public void setId_utente(int id_utente) {
         this.id_utente = id_utente;
     }
-    public void setOrdinato() {
-        this.stato = "Ordinato";
-    }
-    public void setSpedito() {
-        this.stato = "Spedito";
-    }
-    public void setIn_consegna() {
-        this.stato = "In consegna";
-    }
-    public void setConsegnato() {
-        this.stato = "Consegnato";
-    }
+    
+    
     public void setPrezzo_totale(double prezzo_totale) {
         this.prezzo_totale = prezzo_totale;
     }
     public void setData_ordine(Date data_ordine) {
         this.data_ordine = data_ordine;
+    }
+    public void setStato(String stato) {
+    	this.stato = stato;
     }
 
     //Getters

@@ -100,6 +100,11 @@
     	<servlet-class>it.dopamine.controller.CreateReviewServlet</servlet-class>
 	</servlet>
 	
+	<servlet>
+    	<servlet-name>OrdersServlet</servlet-name>
+    	<servlet-class>it.dopamine.controller.OrdersServlet</servlet-class>
+	</servlet>
+	
 	<!-- Mapping -->
 	
 	<servlet-mapping>
@@ -191,6 +196,13 @@
     	<servlet-name>CreateReviewServlet</servlet-name>
     	<url-pattern>/createReview</url-pattern>
 	</servlet-mapping>
+
+	<servlet-mapping>
+    	<servlet-name>OrdersServlet</servlet-name>
+    	<url-pattern>/orders</url-pattern>
+	</servlet-mapping>
+	
+	
 
 	<resource-ref>
 		<res-ref-name>jdbc/dopamine</res-ref-name>

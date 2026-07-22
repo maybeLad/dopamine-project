@@ -5,7 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
+import it.dopamine.model.Ordine;
 import it.dopamine.util.Connector;
 
 public class OrdineDAO {
@@ -70,5 +73,34 @@ public class OrdineDAO {
             e.printStackTrace();
             return false;
         }
+    }
+    
+    public List<Ordine> getOrdiniByUtente(int idUtente) {
+        String SQL = "SELECT id_ordine, id_utente, totale, data_ordine, stato "
+                   + "FROM ordini WHERE id_utente = ? ORDER BY data_ordine DESC";
+        List<Ordine> ordini = new ArrayList<>();
+
+        try (Connection conn = Connector.getConnection();
+             PreparedStatement ps = conn.prepareStatement(SQL)) {
+
+            ps.setInt(1, idUtente);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Ordine o = new Ordine();
+                    o.setId(rs.getInt("id_ordine"));
+                    o.setId_utente(rs.getInt("id_utente"));
+                    o.setPrezzo_totale(rs.getDouble("totale"));
+                    o.setData_ordine(new java.sql.Date(rs.getTimestamp("data_ordine").getTime()));
+                    o.setStato(rs.getString("stato"));
+
+                    ordini.add(o);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ordini;
     }
 }

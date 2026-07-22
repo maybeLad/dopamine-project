@@ -47,7 +47,8 @@
 	color: #1F2937;
 }
 
-.user-info a {
+.user-info a,
+.user-usage a {
 	color: #6F778E;
 	text-decoration: none;
 	font-weight: 600;
