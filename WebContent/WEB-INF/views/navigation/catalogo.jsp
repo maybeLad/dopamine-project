@@ -31,49 +31,67 @@
 		<h2>Benvenuto nel catalogo!</h2>
 	</div>
 
-	<div class="catalogo">
+	<div class="main-container">
 
-		<%
-			Map<String, List<Prodotto>> catalogo = (Map<String, List<Prodotto>>) request.getAttribute("catalogo");
-
-			if (catalogo != null) {
-				for (String categoria : catalogo.keySet()) {
-					List<Prodotto> prodotti = catalogo.get(categoria);
-		%>
-
-					<h3><%= categoria %></h3>
-
-					<div class="griglia-prodotti">
-						<form action="<%=request.getContextPath()%>/productPage" method="POST" class="form-lattine">
-
-							<%
-								for (Prodotto prodotto : prodotti) {
-							%>
-
-							<div class="prodotto">
-								<button type="submit" name="productName" value="<%= prodotto.getNome() %>">
-									<img src="<%=request.getContextPath()%><%= prodotto.getUrl_img() %>" alt="<%= prodotto.getNome() %>">
-								</button>
-								
-								<p class="prodotto-nome"><%= prodotto.getNome() %></p>
-								<p class="prodotto-prezzo">€ <%= prodotto.getPrezzo() %></p>
-
-							</div>
-
-							<%
-								}
-							%>
-
-						</form>
-					</div>
-
-		<%
-				}
-			} else {
-				out.println("<p>Nessun prodotto trovato nel catalogo.</p>");
-			}
-		%>
-
+	    <aside class="filtri-sidebar">
+	        <h3>Filtra Prodotti</h3>
+	        
+	        <form action="<%=request.getContextPath()%>/catalogue" method="GET">
+	            <div class="filtro-gruppo">
+	                <label for="categoria">Categoria:</label>
+	                <select name="categoria" id="categoria">
+	                    <option value="tutte">Tutte le categorie</option>
+	                    <option value="Abbigliamento" <%= "Abbigliamento".equals(request.getParameter("categoria")) ? "selected" : "" %>>Abbigliamento</option>
+	                    <option value="Borracce" <%= "Borracce".equals(request.getParameter("categoria")) ? "selected" : "" %>>Borracce</option>
+	                    <option value="Creatina" <%= "Creatina".equals(request.getParameter("categoria")) ? "selected" : "" %>>Creatina</option>
+	                    <option value="Proteine" <%= "Proteine".equals(request.getParameter("categoria")) ? "selected" : "" %>>Proteine</option>
+	                </select>
+	            </div>
+	
+	            <div class="filtro-gruppo">
+	                <label for="prezzoMin">Prezzo Min (€):</label>
+	                <input type="number" name="prezzoMin" id="prezzoMin" value="<%= request.getParameter("prezzoMin") != null ? request.getParameter("prezzoMin") : "" %>">
+	            </div>
+	
+	            <div class="filtro-gruppo">
+	                <label for="prezzoMax">Prezzo Max (€):</label>
+	                <input type="number" step="0.01" name="prezzoMax" id="prezzoMax" value="<%= request.getParameter("prezzoMax") != null ? request.getParameter("prezzoMax") : "" %>">
+	            </div>
+	
+	            <button type="submit" class="btn-filtra">Applica Filtri</button>
+	            <a href="<%=request.getContextPath()%>/catalogue" class="btn-reset">Rimuovi Filtri</a>
+	        </form>
+	    </aside>
+	
+	    <div class="catalogo">
+	        <%
+	            Map<String, List<Prodotto>> catalogo = (Map<String, List<Prodotto>>) request.getAttribute("catalogo");
+	
+	            if (catalogo != null && !catalogo.isEmpty()) {
+	                for (String categoria : catalogo.keySet()) {
+	                    List<Prodotto> prodotti = catalogo.get(categoria);
+	        %>
+	                    <h3><%= categoria %></h3>
+	                    <div class="griglia-prodotti">
+	                        <% for (Prodotto prodotto : prodotti) { %>
+	                            <div class="prodotto">
+	                                <form action="<%=request.getContextPath()%>/productPage" method="POST">
+	                                    <input type="hidden" name="productName" value="<%= prodotto.getNome() %>">
+	                                    <button type="submit" class="btn-img">
+	                                        <img src="<%=request.getContextPath()%><%= prodotto.getUrl_img() %>" alt="<%= prodotto.getNome() %>">
+	                                    </button>
+	                                </form>
+	                                <p class="prodotto-nome"><%= prodotto.getNome() %></p>
+	                                <p class="prodotto-prezzo">€ <%= String.format("%.2f", prodotto.getPrezzo()) %></p>
+	                            </div>
+	                        <% } %>
+	                    </div>
+	        <%
+	                }
+	            } else { %>
+	            	<p>Nessun prodotto trovato con i filtri selezionati.</p>
+	            <% } %>
+	    </div>
 	</div>
 
 </body>

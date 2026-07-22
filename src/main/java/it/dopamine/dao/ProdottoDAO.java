@@ -67,40 +67,6 @@ public class ProdottoDAO {
         return product;
     }
     
-    public Map<String, List<Prodotto>> getProdottiRaggruppati() {
-        Map<String, List<Prodotto>> catalogo = new LinkedHashMap<>();
-
-        final String TAKE_ALL = "SELECT p.id_prodotto, p.id_categoria, p.nome, p.descrizione, "
-                + "p.prezzo, p.stock, p.url_immagine, c.nome AS nome_categoria "
-                + "FROM prodotti p "
-                + "JOIN categorie c ON p.id_categoria = c.id_categoria "
-                + "ORDER BY c.nome, p.id_prodotto";
-
-        try (Connection connessione = Connector.getConnection(); 
-             PreparedStatement ps = connessione.prepareStatement(TAKE_ALL);
-             ResultSet rs = ps.executeQuery()) {
-
-            while (rs.next()) {
-                Prodotto p = new Prodotto();
-                p.setId(rs.getInt("id_prodotto"));
-                p.setId_categoria(rs.getInt("id_categoria"));
-                p.setNome(rs.getString("nome"));
-                p.setDescrizione(rs.getString("descrizione"));
-                p.setPrezzo(rs.getDouble("prezzo"));
-                p.setStock(rs.getInt("stock"));
-                p.setUrl_img(rs.getString("url_immagine"));
-
-                String categoria = rs.getString("nome_categoria");
-                p.setCategoria(categoria);
-
-                catalogo.computeIfAbsent(categoria, k -> new ArrayList<>()).add(p);
-            }   
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return catalogo;
-    }
 
     public List<Prodotto> cercaProdotti(String query) {
         List<Prodotto> risultati = new ArrayList<>();
@@ -205,5 +171,68 @@ public class ProdottoDAO {
         }
 
         return lista;
+    }
+
+    public Map<String, List<Prodotto>> getProdottiFiltrati(String categoria, Double prezzoMin, Double prezzoMax) {
+        Map<String, List<Prodotto>> catalogue = new LinkedHashMap<>();
+
+        StringBuilder SELECT_PRODUCT_FILTRED = new StringBuilder(
+            "SELECT p.id_prodotto, p.id_categoria, p.nome, p.descrizione, "
+            + "p.prezzo, p.stock, p.url_immagine, c.nome AS nome_categoria "
+            + "FROM prodotti p "
+            + "JOIN categorie c ON p.id_categoria = c.id_categoria"
+        );
+
+        List<String> condizioni = new ArrayList<>();
+
+        if (categoria != null && !categoria.trim().isEmpty() && !"tutte".equalsIgnoreCase(categoria)) 
+            condizioni.add("c.nome = ?");
+        if (prezzoMin != null) 
+            condizioni.add("p.prezzo >= ?");
+        if (prezzoMax != null) 
+            condizioni.add("p.prezzo <= ?");
+        if (!condizioni.isEmpty()) 
+        	SELECT_PRODUCT_FILTRED.append(" WHERE ").append(String.join(" AND ", condizioni));
+        
+        SELECT_PRODUCT_FILTRED.append(" ORDER BY c.nome, p.nome");
+
+        try (Connection connessione = Connector.getConnection();
+             PreparedStatement ps = connessione.prepareStatement(SELECT_PRODUCT_FILTRED.toString())) {
+
+            int paramIndex = 1;
+
+            if (categoria != null && !categoria.trim().isEmpty() && !"tutte".equalsIgnoreCase(categoria)) {
+                ps.setString(paramIndex++, categoria);
+            }
+            if (prezzoMin != null) {
+                ps.setDouble(paramIndex++, prezzoMin);
+            }
+            if (prezzoMax != null) {
+                ps.setDouble(paramIndex++, prezzoMax);
+            }
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Prodotto p = new Prodotto();
+                    p.setId(rs.getInt("id_prodotto"));
+                    p.setId_categoria(rs.getInt("id_categoria"));
+                    p.setNome(rs.getString("nome"));
+                    p.setDescrizione(rs.getString("descrizione"));
+                    p.setPrezzo(rs.getDouble("prezzo"));
+                    p.setStock(rs.getInt("stock"));
+                    p.setUrl_img(rs.getString("url_immagine"));
+
+                    String cat = rs.getString("nome_categoria");
+                    p.setCategoria(cat);
+
+                    catalogue.computeIfAbsent(cat, k -> new ArrayList<>()).add(p);
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return catalogue;
     }
 }

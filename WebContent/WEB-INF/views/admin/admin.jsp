@@ -56,7 +56,6 @@
                         <td>€ <%= String.format("%.2f", p.get("prezzo")) %></td>
                         <td><span class="badge <%= (int)p.get("stock") < 5 ? "danger" : "success" %>"><%= p.get("stock") %></span></td>
                         <td>
-                            <button class="btn btn-edit" onclick="editProdotto(<%= p.get("id") %>, '<%= p.get("nome") %>', '<%= p.get("descrizione") %>', <%= p.get("prezzo") %>, <%= p.get("stock") %>, '<%= p.get("url_immagine") %>')"><i class="fa-solid fa-pen"></i></button>
                             <form action="<%= request.getContextPath() %>/adminDashboard" method="post" style="display:inline;">
                                 <input type="hidden" name="action" value="deleteProdotto">
                                 <input type="hidden" name="id" value="<%= p.get("id") %>">

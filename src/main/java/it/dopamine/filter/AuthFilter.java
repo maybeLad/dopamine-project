@@ -45,7 +45,7 @@ public class AuthFilter extends HttpFilter implements Filter {
         if (autorizzato) {
             chain.doFilter(request, response);
         } else {
-            res.sendRedirect(req.getContextPath() + "/index");
+            res.sendRedirect(req.getContextPath());
         }
     }
 

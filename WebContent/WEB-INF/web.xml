@@ -95,6 +95,11 @@
     	<servlet-class>it.dopamine.controller.AdminServlet</servlet-class>
 	</servlet>
 	
+	<servlet>
+    	<servlet-name>CreateReviewServlet</servlet-name>
+    	<servlet-class>it.dopamine.controller.CreateReviewServlet</servlet-class>
+	</servlet>
+	
 	<!-- Mapping -->
 	
 	<servlet-mapping>
@@ -180,6 +185,11 @@
 	<servlet-mapping>
     	<servlet-name>AdminServlet</servlet-name>
     	<url-pattern>/adminDashboard</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+    	<servlet-name>CreateReviewServlet</servlet-name>
+    	<url-pattern>/createReview</url-pattern>
 	</servlet-mapping>
 
 	<resource-ref>
