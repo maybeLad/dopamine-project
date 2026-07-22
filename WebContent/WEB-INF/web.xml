@@ -89,6 +89,18 @@
     	<servlet-name>CheckoutServlet</servlet-name>
     	<servlet-class>it.dopamine.controller.CheckoutServlet</servlet-class>
 	</servlet>
+	
+	<servlet>
+    	<servlet-name>CreateReviewServlet</servlet-name>
+    	<servlet-class>it.dopamine.controller.CreateReviewServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+    	<servlet-name>ReviewCompletedServlet</servlet-name>
+    	<servlet-class>it.dopamine.controller.ReviewCompletedServlet</servlet-class>
+	</servlet>
+
+
 
 	<!-- Mapping -->
 	<servlet-mapping>
@@ -170,6 +182,18 @@
     	<servlet-name>CheckoutServlet</servlet-name>
     	<url-pattern>/checkout</url-pattern>
 	</servlet-mapping>
+	
+	<servlet-mapping>
+    	<servlet-name>CreateReviewServlet</servlet-name>
+    	<url-pattern>/createReview</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+    	<servlet-name>ReviewCompletedServlet</servlet-name>
+    	<url-pattern>/reviewCompleted</url-pattern>
+	</servlet-mapping>
+
+
 
 	<resource-ref>
 		<res-ref-name>jdbc/dopamine</res-ref-name>

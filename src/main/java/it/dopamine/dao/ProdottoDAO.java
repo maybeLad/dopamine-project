@@ -182,4 +182,28 @@ public class ProdottoDAO {
             return false;
         }
     }
+    
+    public List<Prodotto> getAllProdotti() {
+        List<Prodotto> lista = new ArrayList<>();
+
+        final String TAKE_ALL = "SELECT id_prodotto, nome FROM prodotti ORDER BY nome";
+
+        try (Connection connessione = Connector.getConnection();
+             PreparedStatement ps = connessione.prepareStatement(TAKE_ALL);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                Prodotto p = new Prodotto();
+                p.setId(rs.getInt("id_prodotto"));
+                p.setNome(rs.getString("nome"));
+
+                lista.add(p);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return lista;
+    }
 }
