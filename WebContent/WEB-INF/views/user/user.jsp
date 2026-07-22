@@ -3,8 +3,14 @@
 <%@ page import="it.dopamine.dao.OrdineDAO" %>
 <%@ page import="it.dopamine.model.Utente" %>
 
-<% Utente u = (Utente) session.getAttribute("utenteLoggato"); %>
-<% OrdineDAO ordineDAO = new OrdineDAO(); %>
+<% Utente u = (Utente) session.getAttribute("utenteLoggato"); 
+	if (u==null) {
+		response.sendRedirect(request.getContextPath() + "/login");
+		return;
+	} 
+	OrdineDAO ordineDAO = new OrdineDAO();
+	
+%>
 
 <!DOCTYPE html>
 <html>

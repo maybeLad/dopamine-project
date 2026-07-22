@@ -32,39 +32,36 @@
 	</header>
 		
 	<div class="product-container">
-		<div>
-			<img id="product-picture" alt="Foto prodotto" src="<%=request.getContextPath()%><%= prodotto.getUrl_img() %>">
+    <h1><%= prodotto.getNome() %></h1>
 
-		</div>
+    <div class="product-media">
+        <img id="product-picture" alt="Foto prodotto" src="<%= request.getContextPath() %><%= prodotto.getUrl_img() %>">
+    </div>
 
-		<div class="product-info">
-			<h1><%=prodotto.getNome()%></h1>
+    <div class="product-info">
+        <div class="product-price-section">
+            <h2>Prezzo</h2>
+            <p class="product-price">€<%= String.format("%.2f", prodotto.getPrezzo()) %></p>
+        </div>
 
-			<h2>Prezzo</h2>
-			<p class="product-price">
-				€<%=prodotto.getPrezzo()%></p>
+        <div class="product-actions-group">
+            <div class="quantity-selector">
+                <button type="button" class="qty-btn" onclick="decreaseQty()">−</button>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" max="<%= prodotto.getStock() > 0 ? prodotto.getStock() : 1 %>" readonly>
+                <button type="button" class="qty-btn" onclick="increaseQty()">+</button>
+            </div>
 
-			<h2>Descrizione</h2>
-			<p><%=prodotto.getDescrizione()%></p>
+            <button type="button" class="btn btn-add-cart" onclick="event.preventDefault(); addToCart(<%= prodotto.getId() %>)">
+                Aggiungi al carrello
+            </button>
+        </div>
 
-			<div class="product-actions">
-				<div class="quantity-selector">
-					<button type="button" class="qty-btn" onclick="decreaseQty()">−</button>
-					<input type="number" id="quantity" name="quantity" value="1" min="1" max="<%= prodotto.getStock() > 0 ? prodotto.getStock() : 1 %>" readonly>
-					<button type="button" class="qty-btn" onclick="increaseQty()">+</button>
-				</div>
-
-			</div>
-
-			<div class="product-actions">
-				<button type="button" class="btn btn-add-cart" onclick="event.preventDefault(); addToCart(<%= prodotto.getId() %>)">Aggiungi al carrello</button>
-			</div>
-		</div>
-		
-
-
-
-	</div>
+        <div class="product-description-section">
+            <h2>Descrizione</h2>
+            <p><%= prodotto.getDescrizione() %></p>
+        </div>
+    </div>
+</div>
 
 
 

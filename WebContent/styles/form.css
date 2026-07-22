@@ -52,7 +52,8 @@
 .form-card input[type="text"],
 .form-card input[type="tel"],
 .form-card input[type="number"],
-.form-card select {
+.form-card select,
+.form-card textarea {
     width: 100%;
     padding: 18px 20px;
     background-color: #FFFFFF;
@@ -64,7 +65,14 @@
     transition: all 0.2s ease;
 }
 
-.form-card input::placeholder {
+.form-card textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.form-card input::placeholder,
+.form-card textarea::placeholder {
     color: #8990A8;
     opacity: 0.8;
 }
@@ -74,7 +82,8 @@
 .form-card input[type="text"]:focus,
 .form-card input[type="tel"]:focus,
 .form-card input[type="number"]:focus,
-.form-card select:focus {
+.form-card select:focus,
+.form-card textarea:focus {
     border-color: #8990A8;
     background-color: #EEF0FF;
     box-shadow: 0 0 0 3px rgba(218, 226, 253, 0.4);
@@ -162,13 +171,15 @@
 }
 
 input.error,
-select.error {
+select.error,
+textarea.error {
     border: 2px solid red;
     outline: none;
 }
 
 input.error:focus,
-select.error:focus {
+select.error:focus,
+textarea.error:focus {
     border: 2px solid red;
 }
 
@@ -217,7 +228,8 @@ select.error:focus {
     .form-card input[type="text"],
     .form-card input[type="tel"],
     .form-card input[type="number"],
-    .form-card select {
+    .form-card select,
+    .form-card textarea {
         padding: 14px 16px;
         font-size: 15px;
     }
@@ -259,7 +271,8 @@ select.error:focus {
     .form-card input[type="text"],
     .form-card input[type="tel"],
     .form-card input[type="number"],
-    .form-card select {
+    .form-card select,
+    .form-card textarea {
         padding: 12px 14px;
         font-size: 14px;
     }

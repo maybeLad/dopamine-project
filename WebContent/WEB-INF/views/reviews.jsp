@@ -39,6 +39,7 @@
 			ProdottoDAO prodottoDAO = new ProdottoDAO();
 			UtenteDAO utenteDAO = new UtenteDAO();
 			ArrayList<Recensione> recensioni = reviewDAO.getReviews();
+			
 		
 			if (recensioni.isEmpty()) { %>
 	    		<p>Non e' stato possibile trovare alcuna recensione.</p>
@@ -69,6 +70,19 @@
 		} %>
 
 	</div>
+	<% if(session.getAttribute("utenteLoggato")!=null){ %>
+	<div class="add-review-container">
+        <a href="<%= request.getContextPath() %>/createReview" class="btn-add-review">
+            Scrivi una recensione
+        </a>
+    </div>
+    <% } %>
+
+    <footer>
+        <jsp:include page="navigation/footer.jsp"></jsp:include>
+    </footer>
+	
+	
 	<footer>
 		<jsp:include page="navigation/footer.jsp"></jsp:include>
 	</footer>

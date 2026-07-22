@@ -47,5 +47,24 @@ public class ReviewDAO {
 		return arr;
 	}
 	
+	public boolean insertReview(int idUser, int idProduct, int voto, String description) {      
+	    final String INSERT_REVIEW = "INSERT INTO recensioni (id_utente, id_prodotto, voto, descrizione) VALUES (?, ?, ?, ?)";
+
+	    try (Connection conn = Connector.getConnection(); 
+	         PreparedStatement pstmt = conn.prepareStatement(INSERT_REVIEW)) {
+
+	        pstmt.setInt(1, idUser);
+	        pstmt.setInt(2, idProduct);
+	        pstmt.setInt(3, voto);
+	        pstmt.setString(4, description);
+
+	        int rowsAffected = pstmt.executeUpdate();
+	        return rowsAffected > 0;
+
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+	}
 }
 		
