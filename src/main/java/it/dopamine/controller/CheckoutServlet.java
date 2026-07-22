@@ -44,7 +44,7 @@ public class CheckoutServlet extends HttpServlet {
 
         if (!haPagamento) {
             request.setAttribute("redirectReason", "Manca un metodo di pagamento per completare l'ordine.");
-            request.getRequestDispatcher("WEB-INF/views/changePaymentMethod.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/views/user/changePaymentMethod.jsp").forward(request, response);
             return;
         }
         
