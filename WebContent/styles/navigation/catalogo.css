@@ -147,12 +147,16 @@ body{
 .btn-filtra {
     width: 100%;
     padding: 10px;
-    background-color: #000;
+    background-color: #A3ABC4;
     color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 4px;
     margin-bottom: 5px;
+}
+
+.btn-filtra:hover {
+    background-color: #8890ab;
 }
 
 .btn-reset {
