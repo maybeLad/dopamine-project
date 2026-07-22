@@ -81,11 +81,6 @@
     <footer>
         <jsp:include page="navigation/footer.jsp"></jsp:include>
     </footer>
-	
-	
-	<footer>
-		<jsp:include page="navigation/footer.jsp"></jsp:include>
-	</footer>
 
 </body>
 </html>
